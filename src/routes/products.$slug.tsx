@@ -128,11 +128,11 @@ function ProductPage() {
             </TabsList>
           </div>
 
-          <TabsContent value="nutraceutical" className="mt-0">
+          <TabsContent value="nutraceutical" className="mt-0 transition-all duration-300 data-[state=active]:animate-in data-[state=active]:fade-in-50">
             <ProductDetails p={nutraceuticalProduct} slug={product.slug} />
           </TabsContent>
 
-          <TabsContent value="food-grade" className="mt-0">
+          <TabsContent value="food-grade" className="mt-0 transition-all duration-300 data-[state=active]:animate-in data-[state=active]:fade-in-50">
             <ProductDetails p={foodGradeProduct} slug={product.slug} />
           </TabsContent>
         </Tabs>
@@ -190,13 +190,13 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
       <section className="mx-auto max-w-7xl px-6 pt-8 pb-20 lg:px-10 lg:pt-12">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <div className="overflow-hidden rounded-md bg-[oklch(0.97_0.003_260)]">
+            <div className="group overflow-hidden rounded-xl border border-hairline bg-[oklch(0.97_0.003_260)] shadow-md hover:shadow-xl transition-all duration-500">
               <img
                 src={p.image}
                 alt={p.name}
                 width={1200}
                 height={1200}
-                className="aspect-square w-full object-cover"
+                className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
           </div>
@@ -293,69 +293,77 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
             </p>
           </div>
           <div className="lg:col-span-7">
-            <dl className="divide-y divide-hairline border-y border-hairline">
+            <div className="grid gap-4 sm:grid-cols-2">
               {p.specs.map((s: any) => (
                 <div
                   key={s.label}
-                  className="flex items-baseline justify-between gap-6 py-4"
+                  className="rounded-xl border border-hairline bg-[oklch(0.99_0.001_260)] p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--orange)]/30"
                 >
-                  <dt className="text-sm text-ink-soft">{s.label}</dt>
-                  <dd className="text-base font-semibold text-ink">{s.value}</dd>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft">{s.label}</dt>
+                  <dd className="mt-2 text-xl font-bold text-ink tracking-tight">{s.value}</dd>
                 </div>
               ))}
-            </dl>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Applications + packaging */}
-      <section className="border-t border-hairline bg-[oklch(0.985_0.002_260)]">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:px-10">
-          <div>
+      <section className="border-t border-hairline bg-[oklch(0.985_0.002_260)]/60">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-24 lg:grid-cols-2 lg:px-10">
+          <div className="rounded-2xl border border-hairline bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md">
             <h3 className="text-2xl font-bold tracking-tight text-ink">
               Applications
             </h3>
-            <ul className="mt-6 space-y-3">
+            <p className="mt-2 text-sm text-ink-soft">
+              Suitable for a wide range of industrial and culinary uses:
+            </p>
+            <ul className="mt-6 space-y-4">
               {p.applications.map((a: string) => (
                 <li key={a} className="flex items-start gap-3 text-base text-ink">
-                  <Check
-                    size={18}
-                    className="mt-1 text-[var(--navy)]"
-                    strokeWidth={2}
-                  />
-                  <Highlight>{a}</Highlight>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                    <Check size={14} strokeWidth={3} />
+                  </span>
+                  <span className="leading-normal"><Highlight>{a}</Highlight></span>
                 </li>
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="text-2xl font-bold tracking-tight text-ink">
-              Packaging
-            </h3>
-            <ul className="mt-6 space-y-3">
-              {p.packaging.map((pack: string) => (
-                <li key={pack} className="flex items-start gap-3 text-base text-ink">
-                  <Check
-                    size={18}
-                    className="mt-1 text-[var(--navy)]"
-                    strokeWidth={2}
-                  />
-                  <Highlight>{pack}</Highlight>
-                </li>
-              ))}
-            </ul>
-            <h4 className="mt-10 text-xs font-semibold uppercase tracking-widest text-ink-soft">
-              Certifications
-            </h4>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {p.certifications.map((c: string) => (
-                <span
-                  key={c}
-                  className="rounded-full border border-hairline px-3 py-1 text-xs font-medium text-ink"
-                >
-                  {c}
-                </span>
-              ))}
+          
+          <div className="rounded-2xl border border-hairline bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold tracking-tight text-ink">
+                Packaging
+              </h3>
+              <p className="mt-2 text-sm text-ink-soft">
+                Standard export-grade packaging configurations:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {p.packaging.map((pack: string) => (
+                  <li key={pack} className="flex items-start gap-3 text-base text-ink">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--navy)]/5 text-[var(--navy)]">
+                      <Check size={14} strokeWidth={3} />
+                    </span>
+                    <span className="leading-normal"><Highlight>{pack}</Highlight></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="mt-10 border-t border-hairline pt-6">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-ink-soft">
+                Verified Certifications
+              </h4>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {p.certifications.map((c: string) => (
+                  <span
+                    key={c}
+                    className="rounded-full bg-[var(--navy)]/5 px-3.5 py-1 text-xs font-semibold text-[var(--navy)] transition-colors duration-300 hover:bg-[var(--navy)] hover:text-white"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

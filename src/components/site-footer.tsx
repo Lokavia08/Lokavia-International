@@ -99,7 +99,7 @@ export function SiteFooter() {
             </Link>
             <span className="text-gray-600 hidden md:inline">|</span>
             <span>
-              <Highlight>Serving international buyers only.</Highlight>
+              <Highlight>Currently Serving B2B Buyers Only.</Highlight>
             </span>
           </div>
         </div>

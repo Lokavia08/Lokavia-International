@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { products } from "@/lib/products";
+import { posts } from "@/lib/insights";
 
 const BASE_URL = "https://lokaviainternational.com";
 
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/products", changefreq: "weekly", priority: "0.9" },
           { path: "/about", changefreq: "weekly", priority: "0.8" },
           { path: "/quality-sourcing", changefreq: "weekly", priority: "0.8" },
-          { path: "/insights", changefreq: "monthly", priority: "0.6" },
+          { path: "/insights", changefreq: "weekly", priority: "0.7" },
           { path: "/faq", changefreq: "weekly", priority: "0.7" },
           { path: "/quote", changefreq: "monthly", priority: "0.8" },
           { path: "/privacy-policy", changefreq: "monthly", priority: "0.5" },
@@ -28,6 +29,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/products/${p.slug}`,
             changefreq: "monthly" as const,
             priority: "0.7",
+          })),
+          ...posts.map((p) => ({
+            path: `/insights/${p.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.6",
           })),
         ];
 

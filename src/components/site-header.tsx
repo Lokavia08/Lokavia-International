@@ -7,6 +7,7 @@ const nav = [
   { to: "/products", label: "Products" },
   { to: "/about", label: "About" },
   { to: "/quality-sourcing", label: "Quality & Sourcing" },
+  { to: "/insights", label: "Insights" },
 ];
 
 export function SiteHeader() {

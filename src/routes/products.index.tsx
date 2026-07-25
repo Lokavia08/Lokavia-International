@@ -27,41 +27,7 @@ export const Route = createFileRoute("/products/")({
 });
 
 function ProductsIndex() {
-  const newProductData = [
-    {
-      slug: "onion-powder",
-      name: "Dehydrated Onion Powder",
-      category: "Dehydrated Vegetable Ingredient",
-      description: "Fine, flavorful onion powder for seasonings, sauces, snacks, and ready-to-eat foods.",
-      applications: "Seasonings • Sauces • Snacks • Ready Meals"
-    },
-    {
-      slug: "garlic-powder",
-      name: "Dehydrated Garlic Powder",
-      category: "Dehydrated Vegetable Ingredient",
-      description: "High-quality garlic powder for spice blends, marinades, sauces, and food processing.",
-      applications: "Seasonings • Marinades • Sauces • Meat Processing"
-    },
-    {
-      slug: "ginger-powder",
-      name: "Dehydrated Ginger Powder",
-      category: "Dehydrated Vegetable Ingredient",
-      description: "Aromatic ginger powder for bakery, beverages, seasonings, and health food applications.",
-      applications: "Bakery • Beverages • Seasonings • Health Foods"
-    },
-    {
-      slug: "psyllium-husk",
-      name: "Psyllium Husk",
-      category: "Natural Dietary Fiber Ingredient",
-      description: "Natural soluble fiber for food, nutraceutical, bakery, and dietary supplement applications.",
-      applications: "Functional Foods • Supplements • Bakery • Health Products"
-    }
-  ];
-
-  const displayProducts = products.map((p, i) => {
-    const override = newProductData.find((o) => o.slug === p.slug) || {};
-    return { ...p, ...override } as typeof p & typeof override;
-  });
+  const displayProducts = products;
 
   return (
     <SiteShell>
@@ -82,48 +48,53 @@ function ProductsIndex() {
 
       {/* Product list — editorial rows */}
       <section className="mx-auto max-w-7xl px-6 pb-32 lg:px-10">
-        <ul className="divide-y divide-hairline border-y border-hairline">
+        <ul className="space-y-8">
           {displayProducts.map((p, i) => (
-            <li key={p.slug} className="transition-all duration-300 hover:bg-orange-50/5">
+            <li
+              key={p.slug}
+              className="group overflow-hidden rounded-2xl border border-hairline bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-[var(--orange)]/35"
+            >
               <Link
                 to="/products/$slug"
                 params={{ slug: p.slug }}
-                className="group grid grid-cols-1 items-center gap-8 py-10 px-4 -mx-4 rounded-lg md:grid-cols-12 md:gap-6"
+                className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-8"
               >
-                <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft md:col-span-1">
+                <div className="text-xs font-bold uppercase tracking-widest text-[var(--orange)] md:col-span-1">
                   0{i + 1}
                 </div>
                 <div className="md:col-span-3">
-                  <div className="overflow-hidden rounded-md bg-[oklch(0.97_0.003_260)]">
+                  <div className="overflow-hidden rounded-xl bg-[oklch(0.97_0.003_260)] border border-hairline shadow-inner">
                     <img
                       src={p.image}
                       alt={p.name}
                       loading="lazy"
                       width={1200}
                       height={1200}
-                      className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                      className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
                 </div>
                 <div className="md:col-span-5">
-                  <div className="text-xs uppercase tracking-widest text-ink-soft">
+                  <div className="text-xs font-semibold uppercase tracking-widest text-[var(--navy)]">
                     {p.category}
                   </div>
-                  <h2 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                  <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl transition-colors duration-300 group-hover:text-[var(--orange)]">
                     {p.name}
                   </h2>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
                     <Highlight>{p.description}</Highlight>
                   </p>
                 </div>
-                <div className="md:col-span-3">
+                <div className="md:col-span-3 flex flex-col justify-between h-full py-2">
                   <dl className="space-y-2 text-sm">
                     <div className="flex flex-col gap-1">
-                      <dt className="text-ink-soft text-xs font-semibold uppercase tracking-wider">Applications</dt>
-                      <dd className="text-ink text-sm leading-relaxed">{p.applications}</dd>
+                      <dt className="text-ink-soft text-xs font-bold uppercase tracking-wider">Applications</dt>
+                      <dd className="text-ink text-sm leading-relaxed font-medium">
+                        {p.applications.join(" • ")}
+                      </dd>
                     </div>
                   </dl>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink transition-all duration-300 group-hover:text-[var(--orange)] group-hover:translate-x-1">
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink transition-all duration-300 group-hover:text-[var(--orange)] group-hover:translate-x-1">
                     View Specifications →
                   </div>
                 </div>

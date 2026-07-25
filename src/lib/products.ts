@@ -35,7 +35,7 @@ export type Product = {
   }[];
 };
 
-export const products = productsData as Product[];
+export const products = productsData.products as Product[];
 
 export const getProduct = (slug: string) =>
   products.find((p) => p.slug === slug);

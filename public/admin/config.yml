@@ -1,0 +1,210 @@
+backend:
+  name: github
+  repo: Lokavia08/Lokavia-International
+  branch: main
+
+local_backend: true
+
+media_folder: "public"
+public_folder: "/"
+
+collections:
+  - name: "product_catalog"
+    label: "Product Catalog"
+    delete: false
+    create: false
+    files:
+      - file: "src/lib/products.json"
+        label: "Product List"
+        name: "products"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Product SKU / Slug (URL path)"
+                name: "slug"
+                widget: "string"
+                hint: "The unique URL identifier for the product (e.g., 'onion-powder'). DO NOT modify this unless you want to change the URL path."
+              - label: "Product Name"
+                name: "name"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Dehydrated Vegetables"
+                  - "Dried Spices"
+                  - "Nutraceutical Fibre"
+              - label: "Tagline"
+                name: "tagline"
+                widget: "string"
+              - label: "Product Description"
+                name: "description"
+                widget: "text"
+              - label: "Product Photo"
+                name: "image"
+                widget: "image"
+              - label: "Origin"
+                name: "origin"
+                widget: "select"
+                options:
+                  - "Gujarat, India"
+                  - "Madhya Pradesh, India"
+                  - "Kerala & Assam, India"
+              - label: "Form"
+                name: "form"
+                widget: "select"
+                options:
+                  - "Fine powder"
+                  - "Husk / husk powder"
+              - label: "Mesh Options"
+                name: "meshOptions"
+                widget: "select"
+                multiple: true
+                options:
+                  - "80-100"
+                  - "30 (husk)"
+                  - "40 mesh powder"
+                  - "60 mesh powder"
+                  - "70 mesh powder"
+                  - "100 mesh powder"
+              - label: "Packaging"
+                name: "packaging"
+                widget: "list"
+                field: { label: "Packaging Option", name: "option", widget: "string" }
+              - label: "MOQ (kg)"
+                name: "moqKg"
+                widget: "number"
+                value_type: "int"
+              - label: "Shelf Life (Months)"
+                name: "shelfLifeMonths"
+                widget: "select"
+                options:
+                  - "12"
+                  - "12-18"
+                  - "18-24"
+                  - "24"
+              - label: "Applications"
+                name: "applications"
+                widget: "list"
+                field: { label: "Application", name: "app", widget: "string" }
+              - label: "Specifications"
+                name: "specs"
+                widget: "list"
+                fields:
+                  - { label: "Specification Label (e.g. Moisture)", name: "label", widget: "string" }
+                  - { label: "Value (e.g. ≤ 6%)", name: "value", widget: "string" }
+              - label: "Certifications"
+                name: "certifications"
+                widget: "select"
+                multiple: true
+                options:
+                  - "FSSAI"
+                  - "APEDA"
+                  - "Kosher"
+                  - "Halal"
+                  - "Organic (on request)"
+              - label: "Product Introduction"
+                name: "introduction"
+                widget: "text"
+                required: false
+              - label: "Variants (Tabs)"
+                name: "variants"
+                widget: "list"
+                required: false
+                fields:
+                  - label: "Variant ID"
+                    name: "id"
+                    widget: "select"
+                    options:
+                      - "nutraceutical"
+                      - "food-grade"
+                  - label: "Variant Name"
+                    name: "name"
+                    widget: "string"
+                  - label: "Category"
+                    name: "category"
+                    widget: "select"
+                    options:
+                      - "Nutraceutical Fibre"
+                      - "Food-Grade Psyllium"
+                  - label: "Tagline"
+                    name: "tagline"
+                    widget: "string"
+                  - label: "Variant Description"
+                    name: "description"
+                    widget: "text"
+                  - label: "Origin"
+                    name: "origin"
+                    widget: "select"
+                    options:
+                      - "Gujarat, India"
+                      - "Madhya Pradesh, India"
+                      - "Kerala & Assam, India"
+                  - label: "MOQ (kg)"
+                    name: "moqKg"
+                    widget: "number"
+                    value_type: "int"
+                  - label: "Shelf Life (Months)"
+                    name: "shelfLifeMonths"
+                    widget: "select"
+                    options:
+                      - "12"
+                      - "12-18"
+                      - "18-24"
+                      - "24"
+                  - label: "Mesh Options"
+                    name: "meshOptions"
+                    widget: "select"
+                    multiple: true
+                    options:
+                      - "30 (husk)"
+                      - "40 mesh powder"
+                      - "60 mesh powder"
+                      - "70 mesh powder"
+                      - "100 mesh powder"
+                  - label: "Packaging"
+                    name: "packaging"
+                    widget: "list"
+                    field: { label: "Packaging Option", name: "option", widget: "string" }
+                  - label: "Specifications"
+                    name: "specs"
+                    widget: "list"
+                    fields:
+                      - { label: "Specification Label", name: "label", widget: "string" }
+                      - { label: "Value", name: "value", widget: "string" }
+                  - label: "Applications"
+                    name: "applications"
+                    widget: "list"
+                    field: { label: "Application", name: "app", widget: "string" }
+                  - label: "Certifications"
+                    name: "certifications"
+                    widget: "select"
+                    multiple: true
+                    required: false
+                    options:
+                      - "FSSAI"
+                      - "APEDA"
+                      - "Kosher"
+                      - "Halal"
+                      - "Organic (on request)"
+                  - label: "Variant Introduction"
+                    name: "introduction"
+                    widget: "text"
+                    required: false
+
+  - name: "insights"
+    label: "Insights & Articles"
+    folder: "src/content/insights"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Short Excerpt / Summary", name: "excerpt", widget: "text" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

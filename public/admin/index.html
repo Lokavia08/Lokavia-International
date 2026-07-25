@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager — Lokavia</title>
+    <link href="/admin/config.yml?v=4" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <!-- Include the Decap CMS script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Custom CMS Previews and Styles -->
+    <script>
+      // Inject Tailwind CSS into the preview pane
+      CMS.registerPreviewStyle("https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css");
+
+      // Google Font pairings for Inter Tight & Inter
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+      // Custom React Preview Component
+      var ProductPreview = createClass({
+        renderProductDetails: function(p, isVariant, title) {
+          if (!p) return null;
+          
+          return h('div', { className: 'border border-slate-200 rounded-xl p-6 bg-slate-50/50 mb-8 shadow-sm font-sans' },
+            title && h('h3', { className: 'text-xs font-bold uppercase tracking-wider text-orange-600 mb-4 border-b border-orange-100 pb-2' }, title),
+            h('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
+              // Image container (only for root product)
+              !isVariant && p.image && h('div', { className: 'overflow-hidden rounded-lg bg-white border border-slate-100 shadow-sm flex items-center justify-center' },
+                h('img', { src: p.image, className: 'w-full aspect-square object-cover' })
+              ),
+              // Core info
+              h('div', { className: !isVariant && p.image ? 'md:col-span-1' : 'md:col-span-2' },
+                h('span', { className: 'text-xs font-semibold uppercase tracking-widest text-slate-400' }, p.category || 'Category'),
+                h('h2', { className: 'text-3xl font-extrabold text-slate-900 mt-1' }, p.name || 'Product Name'),
+                p.tagline && h('p', { className: 'text-sm font-medium text-orange-600 mt-2 italic' }, p.tagline),
+                p.introduction && h('div', { className: 'mt-4 border-l-2 border-orange-500 pl-4 py-1 bg-white/60 rounded-r' },
+                  h('h4', { className: 'text-[10px] font-bold uppercase tracking-wider text-slate-700' }, 'What is ' + (p.name || 'this product') + '?'),
+                  h('p', { className: 'text-xs mt-1 text-slate-500 leading-relaxed' }, p.introduction)
+                ),
+                h('p', { className: 'text-sm mt-4 text-slate-600 leading-relaxed' }, p.description || 'Description...'),
+                
+                // Specifications metrics grid
+                h('dl', { className: 'grid grid-cols-2 gap-4 mt-6 border-t border-slate-200/60 pt-4' },
+                  h('div', {},
+                    h('dt', { className: 'text-[10px] uppercase tracking-wider text-slate-400' }, 'Origin'),
+                    h('dd', { className: 'text-xs font-semibold text-slate-800 mt-1' }, p.origin || '-')
+                  ),
+                  h('div', {},
+                    h('dt', { className: 'text-[10px] uppercase tracking-wider text-slate-400' }, 'MOQ'),
+                    h('dd', { className: 'text-xs font-semibold text-slate-800 mt-1' }, p.moqKg ? p.moqKg + ' kg' : '-')
+                  ),
+                  h('div', {},
+                    h('dt', { className: 'text-[10px] uppercase tracking-wider text-slate-400' }, 'Shelf Life'),
+                    h('dd', { className: 'text-xs font-semibold text-slate-800 mt-1' }, p.shelfLifeMonths ? p.shelfLifeMonths + ' months' : '-')
+                  ),
+                  h('div', {},
+                    h('dt', { className: 'text-[10px] uppercase tracking-wider text-slate-400' }, 'Mesh options'),
+                    h('dd', { className: 'text-xs font-semibold text-slate-800 mt-1' }, p.meshOptions ? p.meshOptions.join(' · ') : '-')
+                  )
+                )
+              )
+            ),
+            
+            // Specifications profile card
+            p.specs && p.specs.length > 0 && h('div', { className: 'mt-6 border-t border-slate-200/60 pt-4' },
+              h('h4', { className: 'text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3' }, 'Technical Profile & Specifications'),
+              h('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2' },
+                p.specs.map(function(s, idx) {
+                  return h('div', { key: idx, className: 'flex justify-between items-baseline border-b border-slate-100 pb-1' },
+                    h('span', { className: 'text-xs text-slate-500' }, s.label),
+                    h('span', { className: 'text-xs font-semibold text-slate-800' }, s.value)
+                  );
+                })
+              )
+            ),
+            
+            // Applications and Packaging details
+            h('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 border-t border-slate-200/60 pt-4' },
+              h('div', {},
+                h('h4', { className: 'text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2' }, 'Applications'),
+                p.applications && h('ul', { className: 'space-y-1.5 text-xs text-slate-600' },
+                  p.applications.map(function(a, idx) {
+                    return h('li', { key: idx, className: 'flex items-start gap-2' },
+                      h('span', { className: 'text-orange-500 font-bold' }, '✓'),
+                      h('span', null, a)
+                    );
+                  })
+                )
+              ),
+              h('div', {},
+                h('h4', { className: 'text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2' }, 'Packaging'),
+                p.packaging && h('ul', { className: 'space-y-1.5 text-xs text-slate-600 mb-4' },
+                  p.packaging.map(function(pack, idx) {
+                    return h('li', { key: idx, className: 'flex items-start gap-2' },
+                      h('span', { className: 'text-orange-500 font-bold' }, '✓'),
+                      h('span', null, pack)
+                    );
+                  })
+                ),
+                p.certifications && p.certifications.length > 0 && h('div', { className: 'mt-3' },
+                  h('span', { className: 'text-[9px] uppercase tracking-wider text-slate-400 block mb-1' }, 'Certifications'),
+                  h('div', { className: 'flex flex-wrap gap-1' },
+                    p.certifications.map(function(c, idx) {
+                      return h('span', { key: idx, className: 'text-[9px] bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded-full font-medium' }, c);
+                    })
+                  )
+                )
+              )
+            )
+          );
+        },
+        
+        render: function() {
+          var entry = this.props.entry;
+          var products = entry.getIn(['data', 'products']);
+          if (!products) return h('div', { className: 'p-6 text-center text-slate-400 font-sans' }, 'Loading products...');
+          
+          var list = products.toJS();
+          var self = this;
+          
+          return h('div', { className: 'p-8 max-w-5xl mx-auto font-sans bg-white text-slate-800' },
+            h('div', { className: 'mb-8 border-b border-slate-200 pb-4' },
+              h('h1', { className: 'text-2xl font-bold text-slate-900' }, 'Live Product Catalog Preview'),
+              h('p', { className: 'text-xs text-slate-400 mt-1' }, 'Changes will display here in real-time as you edit in the left panel.')
+            ),
+            list.map(function(p, i) {
+              var isPsyllium = p.slug === 'psyllium-husk';
+              
+              return h('div', { key: i, className: 'mb-12 border-b border-slate-200/60 pb-8 last:border-0' },
+                // Render main details
+                self.renderProductDetails(p, false, null),
+                
+                // Render variants if psyllium-husk
+                isPsyllium && p.variants && p.variants.map(function(v, idx) {
+                  return self.renderProductDetails(v, true, 'Variant Tab: ' + v.name);
+                })
+              );
+            })
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate("products", ProductPreview);
+    </script>
+  </body>
+</html>
