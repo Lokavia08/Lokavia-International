@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "onion-powder",
+    "name": "Onion Powder",
+    "category": "Dehydrated Vegetables",
+    "tagline": "Uniform, low-moisture, custom mesh.",
+    "description": "Dehydrated white onion, milled to a consistent grade for sauces, seasonings, snack coatings, and ready-meal manufacturing.",
+    "image": "/product-onion-powder.jpg",
+    "origin": "Gujarat, India",
+    "form": "Fine powder",
+    "meshOptions": ["80-100"],
+    "packaging": [
+      "25 kg multi-wall paper bag with PE liner",
+      "Bulk 1000 kg jumbo bag",
+      "Private-label retail packs"
+    ],
+    "moqKg": 2000,
+    "shelfLifeMonths": "12-18",
+    "applications": [
+      "Seasoning blends",
+      "Sauces & ketchups",
+      "Snack coatings",
+      "Ready meals"
+    ],
+    "specs": [
+      { "label": "Moisture", "value": "≤ 6%" },
+      { "label": "Ash", "value": "≤ 5%" },
+      { "label": "Color", "value": "Creamy white" },
+      { "label": "Total plate count", "value": "≤ 50,000 CFU/g" }
+    ],
+    "certifications": ["FSSAI", "APEDA"],
+    "introduction": "Lokavia's onion powder is a dehydrated, finely milled seasoning ingredient made from white onions sourced in Gujarat. It is primarily used in commercial food manufacturing, dry seasoning mixes, sauces, and ready-meals for uniform flavor distribution without adding moisture."
+  },
+  {
+    "slug": "garlic-powder",
+    "name": "Garlic Powder",
+    "category": "Dehydrated Vegetables",
+    "tagline": "High-allicin, dehydrated at low temperature.",
+    "description": "Steam-treated, low-temperature-dried garlic milled to a fine powder. Preserves sharp aroma and pungency for industrial seasoning use.",
+    "image": "/product-garlic-powder.jpg",
+    "origin": "Madhya Pradesh, India",
+    "form": "Fine powder",
+    "meshOptions": ["80-100"],
+    "packaging": [
+      "25 kg multi-wall paper bag with PE liner",
+      "Bulk 1000 kg jumbo bag",
+      "Private-label retail packs"
+    ],
+    "moqKg": 2000,
+    "shelfLifeMonths": 24,
+    "applications": [
+      "Spice blends",
+      "Marinades & dressings",
+      "Meat & poultry seasoning",
+      "Instant noodles"
+    ],
+    "specs": [
+      { "label": "Moisture", "value": "max 3.25%" },
+      { "label": "Ash", "value": "max 4.31%" },
+      { "label": "Color", "value": "Light Cream to Light Brown" },
+      { "label": "Volatile oil", "value": "≥ 0.3%" }
+    ],
+    "certifications": ["FSSAI", "APEDA"],
+    "introduction": "Lokavia's garlic powder is a low-temperature dehydrated, steam-sterilized seasoning powder processed from Indian garlic. It is widely used by food manufacturers and spice blenders to add deep aroma and sharp garlic flavor to marinades, coatings, and instant foods."
+  },
+  {
+    "slug": "ginger-powder",
+    "name": "Ginger Powder",
+    "category": "Dried Spices",
+    "tagline": "Aromatic, high-oil, sun- and machine-dried.",
+    "description": "Cochin and Assam origin ginger, cleaned, dried, and pulverised. Warm, pungent aroma suitable for beverages, baked goods, and nutraceutical use.",
+    "image": "/product-ginger-powder.jpg",
+    "origin": "Kerala & Assam, India",
+    "form": "Fine powder",
+    "meshOptions": ["80-100"],
+    "packaging": [
+      "25 kg multi-wall paper bag with PE liner",
+      "Bulk 500 kg jumbo bag",
+      "Nitrogen-flushed retail packs"
+    ],
+    "moqKg": 2000,
+    "shelfLifeMonths": "18-24",
+    "applications": [
+      "Beverages & tea blends",
+      "Bakery & confectionery",
+      "Nutraceuticals",
+      "Spice blends"
+    ],
+    "specs": [
+      { "label": "Moisture", "value": "max 4.85%" },
+      { "label": "Ash", "value": "max 3.94%" },
+      { "label": "Volatile oil", "value": "≥ 1.5%" },
+      { "label": "Color", "value": "brown" }
+    ],
+    "certifications": ["FSSAI", "APEDA", "Organic (on request)"],
+    "introduction": "Lokavia's ginger powder is a premium dehydrated spice powder milled from Cochin and Assam origin ginger. It serves as an aromatic, high-volatile-oil ingredient for industrial food processing, beverage manufacturing, baking, and health supplements."
+  },
+  {
+    "slug": "psyllium-husk",
+    "name": "Psyllium Husk",
+    "category": "Nutraceutical Fibre",
+    "tagline": "99% pure, high-purity export grades.",
+    "description": "Psyllium (Plantago ovata) husk sourced from Gujarat. Available across 95%, 98%, and 99% purity grades for food, pharma, and supplement manufacturers.",
+    "image": "/product-psyllium-husk.jpg",
+    "origin": "Gujarat, India",
+    "form": "Husk / husk powder",
+    "meshOptions": ["30 (husk)", "40 mesh powder", "60 mesh powder"],
+    "packaging": [
+      "25 kg PP bag with PE liner",
+      "Bulk cartons with food-grade liner",
+      "Retail sachets and jars"
+    ],
+    "moqKg": 2000,
+    "shelfLifeMonths": 24,
+    "applications": [
+      "Dietary supplements",
+      "Functional foods & bakery",
+      "Pharmaceutical formulations",
+      "Beverage mixes"
+    ],
+    "specs": [
+      { "label": "Purity", "value": "95% / 98% / 99%" },
+      { "label": "Swell volume", "value": "≥ 40 ml/g" },
+      { "label": "Moisture", "value": "≤ 10%" },
+      { "label": "Foreign matter", "value": "≤ 0.5%" }
+    ],
+    "certifications": ["FSSAI", "APEDA", "Kosher", "Halal"],
+    "introduction": "Lokavia's psyllium husk is a high-purity (up to 99%) natural dietary fiber processed from Plantago ovata seeds in Gujarat. It is primarily used by nutraceutical and supplement manufacturers as an active ingredient in digestive health, weight management, and fiber-supplement formulations.",
+    "variants": [
+      {
+        "id": "nutraceutical",
+        "name": "Psyllium Husk (Nutraceutical)",
+        "category": "Nutraceutical Fibre",
+        "tagline": "99% pure, high-purity export grades.",
+        "description": "Psyllium (Plantago ovata) husk sourced from Gujarat. Available across 95%, 98%, and 99% purity grades for food, pharma, and supplement manufacturers.",
+        "origin": "Gujarat, India",
+        "moqKg": 2000,
+        "shelfLifeMonths": 24,
+        "meshOptions": ["30 (husk)", "40 mesh powder", "60 mesh powder"],
+        "packaging": [
+          "25 kg PP bag with PE liner",
+          "Bulk cartons with food-grade liner",
+          "Retail sachets and jars"
+        ],
+        "specs": [
+          { "label": "Purity", "value": "95% / 98% / 99%" },
+          { "label": "Swell volume", "value": "≥ 40 ml/g" },
+          { "label": "Moisture", "value": "≤ 10%" },
+          { "label": "Foreign matter", "value": "≤ 0.5%" }
+        ],
+        "applications": [
+          "Dietary supplements",
+          "Functional foods & bakery",
+          "Pharmaceutical formulations",
+          "Beverage mixes"
+        ],
+        "introduction": "Lokavia's psyllium husk is a high-purity (up to 99%) natural dietary fiber processed from Plantago ovata seeds in Gujarat. It is primarily used by nutraceutical and supplement manufacturers as an active ingredient in digestive health, weight management, and fiber-supplement formulations."
+      },
+      {
+        "id": "food-grade",
+        "name": "Psyllium Husk (Food-Grade)",
+        "category": "Food-Grade Psyllium",
+        "tagline": "Clean, consistent binder and dietary fibre for food manufacturing.",
+        "description": "Food-grade psyllium husk and powder sourced from Gujarat agricultural belt, ideal as a natural stabilizer, binder, and fiber-enrichment ingredient in commercial baking, gluten-free formulations, and meat processing.",
+        "origin": "Gujarat, India",
+        "moqKg": 2000,
+        "shelfLifeMonths": 24,
+        "meshOptions": ["30 (husk)", "40 mesh powder", "70 mesh powder", "100 mesh powder"],
+        "packaging": [
+          "25 kg paper bag with PE liner",
+          "Bulk 500 kg jumbo bags"
+        ],
+        "specs": [
+          { "label": "Purity", "value": "85% / 95% / 98%" },
+          { "label": "Swell volume", "value": "≥ 30 ml/g" },
+          { "label": "Moisture", "value": "≤ 11%" },
+          { "label": "Foreign matter", "value": "≤ 1.0%" }
+        ],
+        "applications": [
+          "Gluten-free baking & bread",
+          "Meat processing & binder",
+          "Thickening & stabilization",
+          "Breakfast cereals & bars"
+        ],
+        "introduction": "Lokavia's food-grade psyllium husk is a clean, natural hydrocolloid binder and dietary fiber ingredient. It is used as a functional stabilizer and water-binding agent in commercial baking, gluten-free formulations, and processed food applications."
+      }
+    ]
+  }
+]
