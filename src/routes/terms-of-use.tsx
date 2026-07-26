@@ -15,7 +15,7 @@ export const Route = createFileRoute("/terms-of-use")({
         property: "og:description",
         content: "Commercial terms of use for Lokavia.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/terms-of-use" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

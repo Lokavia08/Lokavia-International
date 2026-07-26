@@ -18,7 +18,7 @@ export const Route = createFileRoute("/products/")({
         property: "og:description",
         content: "Premium dehydrated onion, garlic, ginger, and psyllium husk for global food manufacturers and distributors.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/products" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/quality-sourcing")({
         content:
           "Traceable origin pipelines, strict laboratory testing, and industrial packing standards.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/quality-sourcing" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

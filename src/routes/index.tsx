@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Premium dehydrated agri-commodities for global buyers, shipped at export scale.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

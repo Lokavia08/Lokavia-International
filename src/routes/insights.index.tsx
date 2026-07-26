@@ -20,7 +20,7 @@ export const Route = createFileRoute("/insights/")({
         property: "og:description",
         content: "Market reports and trade insights for dehydrated agri-commodities.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/insights" },
     ],
   }),

@@ -89,7 +89,63 @@ function ProductPage() {
     "brand": {
       "@type": "Brand",
       "name": "Lokavia"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Lokavia International",
+      "url": "https://www.lokaviainternational.com"
+    },
+    "countryOfOrigin": {
+      "@type": "Country",
+      "name": product.origin
+    },
+    "material": product.form,
+    "additionalProperty": [
+      ...product.specs.map((s) => ({
+        "@type": "PropertyValue",
+        "name": s.label,
+        "value": s.value
+      })),
+      {
+        "@type": "PropertyValue",
+        "name": "Minimum Order Quantity",
+        "value": `${product.moqKg} kg`,
+        "unitCode": "KGM"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Shelf Life",
+        "value": `${product.shelfLifeMonths} months`
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.lokaviainternational.com/quote`,
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Lokavia International"
+      }
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Products",
+        "item": "https://www.lokaviainternational.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": product.name,
+        "item": `https://www.lokaviainternational.com/products/${product.slug}`
+      }
+    ]
   };
 
   return (
@@ -97,6 +153,10 @@ function ProductPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Breadcrumb */}
       <div className="mx-auto max-w-7xl px-6 pt-10 lg:px-10">

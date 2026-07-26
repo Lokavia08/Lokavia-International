@@ -17,7 +17,7 @@ export const Route = createFileRoute("/faq")({
         property: "og:description",
         content: "Find answers to frequently asked questions about our export ingredients and shipping.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/faq" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

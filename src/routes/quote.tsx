@@ -20,7 +20,7 @@ export const Route = createFileRoute("/quote")({
         property: "og:description",
         content: "Request an export quote for bulk agri-commodities.",
       },
-      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/quote" },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },

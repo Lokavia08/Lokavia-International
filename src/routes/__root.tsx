@@ -116,8 +116,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/svg+xml", href: "/Logo Light.svg" },
-      { rel: "apple-touch-icon", href: "/Logo Light.png" },
+      { rel: "icon", type: "image/svg+xml", href: "/logo-light.svg" },
+      { rel: "apple-touch-icon", href: "/logo-light.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -143,7 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "name": "Lokavia",
     "legalName": "Lokavia International",
     "url": "https://www.lokaviainternational.com",
-    "logo": "https://www.lokaviainternational.com/Logo%20Light.png",
+    "logo": "https://www.lokaviainternational.com/logo-light.png",
     "email": "info@lokaviainternational.com",
     "address": {
       "@type": "PostalAddress",

@@ -12,7 +12,7 @@ export function SiteFooter() {
               className="inline-flex"
             >
               <img
-                src="/Logo + Wordmark Dark.svg"
+                src="/logo-wordmark-dark.svg"
                 alt="Lokavia"
                 className="h-8 w-auto"
               />

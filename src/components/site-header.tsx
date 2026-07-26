@@ -38,7 +38,7 @@ export function SiteHeader() {
           className="flex items-center transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
         >
           <img
-            src="/Logo + Wordmark light.svg"
+            src="/logo-wordmark-light.svg"
             alt="Lokavia"
             className="h-8 w-auto"
           />
