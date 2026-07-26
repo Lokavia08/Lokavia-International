@@ -27,8 +27,8 @@ export const Route = createFileRoute("/products/$slug")({
         { name: "description", content: product.description },
         { property: "og:title", content: `${product.name} — Lokavia` },
         { property: "og:description", content: product.description },
-        { property: "og:image", content: `https://lokaviainternational.com${product.image}` },
-        { property: "og:url", content: `https://lokaviainternational.com/products/${product.slug}` },
+        { property: "og:image", content: `https://www.lokaviainternational.com${product.image}` },
+        { property: "og:url", content: `https://www.lokaviainternational.com/products/${product.slug}` },
         { property: "og:type", content: "product" },
       ],
     };
@@ -82,7 +82,7 @@ function ProductPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": `https://lokaviainternational.com${product.image}`,
+    "image": `https://www.lokaviainternational.com${product.image}`,
     "description": product.description,
     "category": product.category,
     "brand": {

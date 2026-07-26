@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { products } from "@/lib/products";
 import { posts } from "@/lib/insights";
 
-const BASE_URL = "https://lokaviainternational.com";
+const BASE_URL = "https://www.lokaviainternational.com";
 
 interface SitemapEntry {
   path: string;

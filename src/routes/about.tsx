@@ -22,8 +22,8 @@ export const Route = createFileRoute("/about")({
         content:
           "Sourcing agri-commodities for the global food sector with strict compliance.",
       },
-      { property: "og:image", content: "https://lokaviainternational.com/Logo%20Light.png" },
-      { property: "og:url", content: "https://lokaviainternational.com/about" },
+      { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
+      { property: "og:url", content: "https://www.lokaviainternational.com/about" },
       { property: "og:type", content: "website" },
     ],
   }),

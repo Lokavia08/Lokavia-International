@@ -141,8 +141,8 @@ function RootShell({ children }: { children: ReactNode }) {
     "@type": "Organization",
     "name": "Lokavia",
     "legalName": "Lokavia International",
-    "url": "https://lokaviainternational.com",
-    "logo": "https://lokaviainternational.com/Logo%20Light.png",
+    "url": "https://www.lokaviainternational.com",
+    "logo": "https://www.lokaviainternational.com/Logo%20Light.png",
     "email": "info@lokaviainternational.com",
     "address": {
       "@type": "PostalAddress",

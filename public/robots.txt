@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /insights
 
-Sitemap: https://lokaviainternational.com/sitemap.xml
+Sitemap: https://www.lokaviainternational.com/sitemap.xml
