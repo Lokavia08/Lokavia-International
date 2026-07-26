@@ -22,6 +22,7 @@ export const Route = createFileRoute("/quality-sourcing")({
       { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/quality-sourcing" },
       { property: "og:type", content: "website" },
+      { name: "robots", content: "index, follow" },
     ],
   }),
   component: QualitySourcingPage,

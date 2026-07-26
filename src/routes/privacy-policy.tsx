@@ -18,6 +18,7 @@ export const Route = createFileRoute("/privacy-policy")({
       { property: "og:image", content: "https://www.lokaviainternational.com/Logo%20Light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/privacy-policy" },
       { property: "og:type", content: "website" },
+      { name: "robots", content: "index, follow" },
     ],
   }),
   component: PrivacyPolicyPage,

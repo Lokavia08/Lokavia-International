@@ -30,6 +30,7 @@ export const Route = createFileRoute("/products/$slug")({
         { property: "og:image", content: `https://www.lokaviainternational.com${product.image}` },
         { property: "og:url", content: `https://www.lokaviainternational.com/products/${product.slug}` },
         { property: "og:type", content: "product" },
+        { name: "robots", content: "index, follow" },
       ],
     };
   },
@@ -88,17 +89,6 @@ function ProductPage() {
     "brand": {
       "@type": "Brand",
       "name": "Lokavia"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "price": "Contact for pricing",
-      "itemCondition": "https://schema.org/NewCondition",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Lokavia"
-      }
     }
   };
 

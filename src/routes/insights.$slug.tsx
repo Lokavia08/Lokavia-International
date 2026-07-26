@@ -29,6 +29,7 @@ export const Route = createFileRoute("/insights/$slug")({
         { property: "og:image", content: post.image ? `https://www.lokaviainternational.com${post.image}` : "" },
         { property: "og:url", content: `https://www.lokaviainternational.com/insights/${post.slug}` },
         { property: "og:type", content: "article" },
+        { name: "robots", content: "index, follow" },
       ],
     };
   },
