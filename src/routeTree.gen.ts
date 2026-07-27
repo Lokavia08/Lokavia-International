@@ -24,6 +24,8 @@ import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
+import { Route as ApiCallbackRouteImport } from './routes/api.callback'
+import { Route as ApiAuthRouteImport } from './routes/api.auth'
 
 const TermsOfUseRoute = TermsOfUseRouteImport.update({
   id: '/terms-of-use',
@@ -100,6 +102,16 @@ const InsightsSlugRoute = InsightsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => InsightsRoute,
 } as any)
+const ApiCallbackRoute = ApiCallbackRouteImport.update({
+  id: '/api/callback',
+  path: '/api/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuthRoute = ApiAuthRouteImport.update({
+  id: '/api/auth',
+  path: '/api/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -113,6 +125,8 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-use': typeof TermsOfUseRoute
+  '/api/auth': typeof ApiAuthRoute
+  '/api/callback': typeof ApiCallbackRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights/': typeof InsightsIndexRoute
@@ -128,6 +142,8 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-use': typeof TermsOfUseRoute
+  '/api/auth': typeof ApiAuthRoute
+  '/api/callback': typeof ApiCallbackRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights': typeof InsightsIndexRoute
@@ -146,6 +162,8 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-use': typeof TermsOfUseRoute
+  '/api/auth': typeof ApiAuthRoute
+  '/api/callback': typeof ApiCallbackRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/insights/': typeof InsightsIndexRoute
@@ -165,6 +183,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/terms-of-use'
+    | '/api/auth'
+    | '/api/callback'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights/'
@@ -180,6 +200,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/terms-of-use'
+    | '/api/auth'
+    | '/api/callback'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights'
@@ -197,6 +219,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/terms-of-use'
+    | '/api/auth'
+    | '/api/callback'
     | '/insights/$slug'
     | '/products/$slug'
     | '/insights/'
@@ -215,6 +239,8 @@ export interface RootRouteChildren {
   QuoteRoute: typeof QuoteRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsOfUseRoute: typeof TermsOfUseRoute
+  ApiAuthRoute: typeof ApiAuthRoute
+  ApiCallbackRoute: typeof ApiCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -324,6 +350,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsSlugRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/api/callback': {
+      id: '/api/callback'
+      path: '/api/callback'
+      fullPath: '/api/callback'
+      preLoaderRoute: typeof ApiCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/auth': {
+      id: '/api/auth'
+      path: '/api/auth'
+      fullPath: '/api/auth'
+      preLoaderRoute: typeof ApiAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -367,6 +407,8 @@ const rootRouteChildren: RootRouteChildren = {
   QuoteRoute: QuoteRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsOfUseRoute: TermsOfUseRoute,
+  ApiAuthRoute: ApiAuthRoute,
+  ApiCallbackRoute: ApiCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

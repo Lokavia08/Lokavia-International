@@ -2,6 +2,8 @@ backend:
   name: github
   repo: Lokavia08/Lokavia-International
   branch: main
+  base_url: https://www.lokaviainternational.com
+  auth_endpoint: api/auth
 
 local_backend: true
 
