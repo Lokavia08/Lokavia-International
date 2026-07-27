@@ -18,7 +18,15 @@ export const Route = createFileRoute("/api/auth")({
 
         const clientId = getEnvVariable("GITHUB_CLIENT_ID");
         if (!clientId) {
-          return new Response("GITHUB_CLIENT_ID environment variable is not configured.", { status: 500 });
+          const envKeys = Object.keys(process.env).filter(k => 
+            !k.toLowerCase().includes("secret") && 
+            !k.toLowerCase().includes("key") && 
+            !k.toLowerCase().includes("token")
+          );
+          return new Response(
+            `GITHUB_CLIENT_ID environment variable is not configured. Available non-sensitive env keys: ${JSON.stringify(envKeys)}`, 
+            { status: 500 }
+          );
         }
 
         // Dynamically build the redirect URI pointing to /api/callback on the same host
