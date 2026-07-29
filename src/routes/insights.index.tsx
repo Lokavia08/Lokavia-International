@@ -8,17 +8,18 @@ import { useState } from "react";
 export const Route = createFileRoute("/insights/")({
   head: () => ({
     meta: [
-      { title: "Insights & Industry News — Lokavia" },
+      { title: "Trade Insights & Export Guides | Lokavia" },
       {
         name: "description",
         content:
-          "Industry insights, supply chain trends, and agricultural commodity updates from the Lokavia team.",
+          "Guides on agri-commodity export logistics, quality compliance, MRL testing, and global sourcing trends from the Lokavia team.",
       },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Insights & Industry News — Lokavia" },
+      { property: "og:title", content: "Trade Insights & Export Guides | Lokavia" },
       {
         property: "og:description",
-        content: "Market reports and trade insights for dehydrated agri-commodities.",
+        content:
+          "Guides on agri-commodity export logistics, quality compliance, MRL testing, and global sourcing trends from the Lokavia team.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/insights" },

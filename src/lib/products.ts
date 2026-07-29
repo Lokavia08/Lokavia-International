@@ -17,6 +17,8 @@ export type Product = {
   specs: { label: string; value: string }[];
   certifications: string[];
   introduction?: string;
+  metaTitle?: string;
+  metaDescription?: string;
   variants?: {
     id: string;
     name: string;

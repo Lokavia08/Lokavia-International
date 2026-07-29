@@ -10,17 +10,17 @@ import qualityTestingImg from "@/assets/quality-testing.png";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Lokavia" },
+      { title: "About Lokavia | Agri-Commodity Exporter, Surat, India" },
       {
         name: "description",
         content:
-          "Learn about Lokavia's commitment to quality, B2B export logistics, and global sourcing compliance.",
+          "Lokavia is a merchant exporter of dehydrated agri-commodities from Surat, India, supplying food manufacturers and distributors across 20+ target markets.",
       },
-      { property: "og:title", content: "About Us — Lokavia" },
+      { property: "og:title", content: "About Lokavia | Agri-Commodity Exporter, Surat, India" },
       {
         property: "og:description",
         content:
-          "Sourcing agri-commodities for the global food sector with strict compliance.",
+          "Lokavia is a merchant exporter of dehydrated agri-commodities from Surat, India, supplying food manufacturers and distributors across 20+ target markets.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/about" },

@@ -10,16 +10,17 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lokavia — Agri-Commodity Exports for Global Buyers" },
+      { title: "Lokavia | Dehydrated Onion, Garlic & Ginger Powder Exporter, India" },
       {
         name: "description",
         content:
-          "Lokavia supplies international buyers with premium dehydrated agri-commodities — onion powder, garlic powder, ginger powder, and psyllium husk — at export scale.",
+          "Lokavia exports dehydrated onion, garlic, ginger powder, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
       },
-      { property: "og:title", content: "Lokavia — Agri-Commodity Exports" },
+      { property: "og:title", content: "Lokavia | Dehydrated Onion, Garlic & Ginger Powder Exporter, India" },
       {
         property: "og:description",
-        content: "Premium dehydrated agri-commodities for global buyers, shipped at export scale.",
+        content:
+          "Lokavia exports dehydrated onion, garlic, ginger powder, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/" },

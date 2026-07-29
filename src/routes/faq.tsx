@@ -7,15 +7,15 @@ import { ChevronDown, Search } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Frequently Asked Questions | Lokavia" },
+      { title: "FAQ — Export Specs, MOQ & Certifications | Lokavia" },
       {
         name: "description",
-        content: "Find answers to frequently asked questions about Lokavia's dehydrated onion, garlic, ginger, and psyllium husk exports.",
+        content: "Answers on Lokavia's product specs, MOQ, certifications, packaging, and export shipping process for onion, garlic, ginger powder, and psyllium husk buyers.",
       },
-      { property: "og:title", content: "Frequently Asked Questions | Lokavia" },
+      { property: "og:title", content: "FAQ — Export Specs, MOQ & Certifications | Lokavia" },
       {
         property: "og:description",
-        content: "Find answers to frequently asked questions about our export ingredients and shipping.",
+        content: "Answers on Lokavia's product specs, MOQ, certifications, packaging, and export shipping process for onion, garlic, ginger powder, and psyllium husk buyers.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/faq" },

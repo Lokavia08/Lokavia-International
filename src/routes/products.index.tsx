@@ -7,16 +7,17 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Dehydrated Food Ingredients | Lokavia" },
+      { title: "Bulk Onion, Garlic, Ginger Powder & Psyllium Husk | Lokavia" },
       {
         name: "description",
         content:
-          "Premium dehydrated onion, garlic, ginger, and psyllium husk for global food manufacturers and distributors.",
+          "Export-grade dehydrated onion, garlic, ginger powder, and psyllium husk (Plantago ovata) — precise mesh size, moisture, and purity specs for bulk buyers.",
       },
-      { property: "og:title", content: "Dehydrated Food Ingredients | Lokavia" },
+      { property: "og:title", content: "Bulk Onion, Garlic, Ginger Powder & Psyllium Husk | Lokavia" },
       {
         property: "og:description",
-        content: "Premium dehydrated onion, garlic, ginger, and psyllium husk for global food manufacturers and distributors.",
+        content:
+          "Export-grade dehydrated onion, garlic, ginger powder, and psyllium husk (Plantago ovata) — precise mesh size, moisture, and purity specs for bulk buyers.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/products" },

@@ -56,6 +56,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: Home (`/`)
 *   **File Path**: [index.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/index.tsx)
+*   **SEO Title**: `"Lokavia | Dehydrated Onion, Garlic & Ginger Powder Exporter, India"`
+*   **Meta Description**: `"Lokavia exports dehydrated onion, garlic, ginger powder, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide."`
 
 ### 1. Hero Section
 *   **Status**: Final
@@ -152,6 +154,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: About Us (`/about`)
 *   **File Path**: [about.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/about.tsx)
+*   **SEO Title**: `"About Lokavia | Agri-Commodity Exporter, Surat, India"`
+*   **Meta Description**: `"Lokavia is a merchant exporter of dehydrated agri-commodities from Surat, India, supplying food manufacturers and distributors across 20+ target markets."`
 
 ### 1. Hero Section
 *   **Status**: Final
@@ -223,12 +227,12 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: Products Overview (`/products`)
 *   **File Path**: [products.index.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/products.index.tsx)
+*   **SEO Title**: `"Bulk Onion, Garlic, Ginger Powder & Psyllium Husk | Lokavia"`
+*   **Meta Description**: `"Export-grade dehydrated onion, garlic, ginger powder, and psyllium husk (Plantago ovata) — precise mesh size, moisture, and purity specs for bulk buyers."`
 
 ### 1. Header Section
 *   **Status**: Final
 *   **Content**:
-    *   **SEO Title**: `"Dehydrated Food Ingredients | Lokavia"`
-    *   **Meta Description**: `"Premium dehydrated onion, garlic, ginger, and psyllium husk for global food manufacturers and distributors."`
     *   **Eyebrow label**: `"Catalogue · 2026"`
     *   **Headline**: `"Our Products"`
     *   **Description**: `"Explore Lokavia's range of premium dehydrated food ingredients for food manufacturing, ingredient distribution, and private-label applications."`
@@ -277,6 +281,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 ## Route: Product Details (`/products/$slug`)
 *   **File Path**: [products.$slug.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/products.$slug.tsx)
 *   **Base Specs**: Fetched dynamically from `products.json` or local tab constants.
+*   **SEO Title**: Dynamic, e.g. `"Onion Powder Exporter India | Bulk Dehydrated Onion — Lokavia"` (loaded from products.json)
+*   **Meta Description**: Dynamic, e.g. `"Dehydrated onion powder from India, milled to consistent mesh size and moisture spec for sauces, seasonings, snacks, and RTE food manufacturing. MOQ 2000 kg."` (loaded from products.json)
 
 ### 1. General Details (Onion Powder / Garlic Powder / Ginger Powder)
 *   **Status**: Final (tagline, specs, applications, and packaging are verbatim from JSON catalog database)
@@ -377,6 +383,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: Quality & Sourcing (`/quality-sourcing`)
 *   **File Path**: [quality-sourcing.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/quality-sourcing.tsx)
+*   **SEO Title**: `"Quality & Sourcing Standards | MRL Compliance — Lokavia"`
+*   **Meta Description**: `"Moisture control, mesh-size accuracy, and MRL compliance testing on every consignment — sourcing standards for international food-grade agri-commodity buyers."`
 
 ### 1. Hero Section
 *   **Status**: Final
@@ -423,6 +431,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: Get a Quote (`/quote`)
 *   **File Path**: [quote.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/quote.tsx)
+*   **SEO Title**: `"Get a Quote — Lokavia"`
+*   **Meta Description**: `"Request an export quote from Lokavia. Share your volumes, destination port, and packaging needs — we respond within one business day."`
 
 ### 1. Header Section
 *   **Status**: Final
@@ -470,27 +480,34 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ---
 
-## Route: Resources/Insights Placeholder (`/insights`)
-*   **File Path**: [insights.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/insights.tsx)
-*   **Status**: Placeholder (Page is draft until articles are published; meta tags set to `noindex, nofollow`)
+## Route: Insights Overview (`/insights`)
+*   **File Path**: [insights.index.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/insights.index.tsx)
+*   **SEO Title**: `"Trade Insights & Export Guides | Lokavia"`
+*   **Meta Description**: `"Guides on agri-commodity export logistics, quality compliance, MRL testing, and global sourcing trends from the Lokavia team."`
+*   **Status**: Final
 
 ### 1. Main Heading
 *   **Content**:
-    *   **Eyebrow label**: `"Resources & Insights"`
-    *   **Headline**: `"Trade insights,\npublishing soon."`
-    *   **Paragraph**: `"We are building a library of reference guides covering agricultural export logistics, quality compliance testing, and global sourcing parameters."`
+    *   **Breadcrumbs**: `"Home / Insights"`
+    *   **Headline**: `"Ideas that Inspire."`
 
-### 2. Category Preview Boxes
-*   **Content**:
-    *   **Box 1 Title**: `"Export Logistics"`
-    *   **Box 1 Body**: `"Detailed reports on transit times, ocean freight handling, and container insulation standards for temperature-sensitive cargo."`
-    *   **Box 2 Title**: `"Compliance Updates"`
-    *   **Box 2 Body**: `"Factual summaries on MRL regulations, pesticide residue testing limits, and import standards for EU and US markets."`
+### 2. Articles List
+*   **Status**: Final (contains 5 published articles: Export Logistics, India Spices Sourcing, Psyllium Husk Demand, Quality Compliance Testing, Dehydrated Goods Shipping)
+
+---
+
+## Route: Insights Article Details (`/insights/$slug`)
+*   **File Path**: [insights.$slug.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/insights.$slug.tsx)
+*   **SEO Title**: `"[Article Title] | Lokavia Insights"` (dynamic)
+*   **Meta Description**: `"[Article Excerpt]"` (dynamic)
+*   **Status**: Final
 
 ---
 
 ## Route: Privacy Policy (`/privacy-policy`)
 *   **File Path**: [privacy-policy.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/privacy-policy.tsx)
+*   **SEO Title**: `"Privacy Policy — Lokavia"`
+*   **Meta Description**: `"Lokavia International's privacy policy regarding data collection, processing, and GDPR compliance."`
 
 ### 1. Header
 *   **Status**: Final draft
@@ -521,6 +538,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: Terms of Use (`/terms-of-use`)
 *   **File Path**: [terms-of-use.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/terms-of-use.tsx)
+*   **SEO Title**: `"Terms of Use — Lokavia"`
+*   **Meta Description**: `"Terms and conditions governing the use of Lokavia's website and commercial inquiries."`
 
 ### 1. Header
 *   **Status**: Final draft
@@ -565,6 +584,8 @@ This document serves as a single, comprehensive reference of all user-facing tex
 
 ## Route: FAQ (`/faq`)
 *   **File Path**: [faq.tsx](file:///c:/Users/lokes/OneDrive/Desktop/lokaviainternational.com/src/routes/faq.tsx)
+*   **SEO Title**: `"FAQ — Export Specs, MOQ & Certifications | Lokavia"`
+*   **Meta Description**: `"Answers on Lokavia's product specs, MOQ, certifications, packaging, and export shipping process for onion, garlic, ginger powder, and psyllium husk buyers."`
 
 ### 1. Main Header
 *   **Status**: Final

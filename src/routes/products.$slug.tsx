@@ -21,12 +21,14 @@ export const Route = createFileRoute("/products/$slug")({
       };
     }
     const { product } = loaderData;
+    const title = product.metaTitle || `${product.name} — Lokavia`;
+    const description = product.metaDescription || product.description;
     return {
       meta: [
-        { title: `${product.name} — Lokavia` },
-        { name: "description", content: product.description },
-        { property: "og:title", content: `${product.name} — Lokavia` },
-        { property: "og:description", content: product.description },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
         { property: "og:image", content: `https://www.lokaviainternational.com${product.image}` },
         { property: "og:url", content: `https://www.lokaviainternational.com/products/${product.slug}` },
         { property: "og:type", content: "product" },

@@ -7,17 +7,17 @@ import { ArrowUpRight, CheckCircle2, ShieldAlert } from "lucide-react";
 export const Route = createFileRoute("/quality-sourcing")({
   head: () => ({
     meta: [
-      { title: "Quality & Sourcing — Lokavia" },
+      { title: "Quality & Sourcing Standards | MRL Compliance — Lokavia" },
       {
         name: "description",
         content:
-          "Our quality management and direct sourcing protocols. Certified testing, MRL compliance, and premium export logistics.",
+          "Moisture control, mesh-size accuracy, and MRL compliance testing on every consignment — sourcing standards for international food-grade agri-commodity buyers.",
       },
-      { property: "og:title", content: "Quality & Sourcing — Lokavia" },
+      { property: "og:title", content: "Quality & Sourcing Standards | MRL Compliance — Lokavia" },
       {
         property: "og:description",
         content:
-          "Traceable origin pipelines, strict laboratory testing, and industrial packing standards.",
+          "Moisture control, mesh-size accuracy, and MRL compliance testing on every consignment — sourcing standards for international food-grade agri-commodity buyers.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/quality-sourcing" },
