@@ -7,4 +7,16 @@
 >
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+
+
+## SEO Target Clusters & Page Mappings
+
+| Cluster | Target Pages |
+|---|---|
+| Dehydrated onion export | Onion powder, onion flakes/granules future pages, onion powder specs guide |
+| Dehydrated garlic export | Garlic powder, allicin/mesh/moisture guide, garlic powder applications |
+| Ginger powder export | Ginger origin, volatile oil, beverage/bakery/nutraceutical applications |
+| Psyllium export | Food-grade psyllium, nutraceutical psyllium, purity/swell volume guide |
+| Quality/compliance | MRL testing, COA, phytosanitary certificate, export documentation |
+| Buyer education | MOQ, Incoterms, private label, samples, packaging, shelf life |
+

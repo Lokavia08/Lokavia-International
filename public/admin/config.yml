@@ -112,6 +112,54 @@ collections:
                 name: "introduction"
                 widget: "text"
                 required: false
+              - label: "Origin Highlights (Steps)"
+                name: "originHighlights"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Highlight Title (e.g. Mahuva Belt)", name: "title", widget: "string" }
+                  - { label: "Highlight Details", name: "text", widget: "text" }
+              - label: "Physicochemical Specifications"
+                name: "physicochemicalSpecs"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Specification Label (e.g. Moisture)", name: "label", widget: "string" }
+                  - { label: "Value (e.g. ≤ 6%)", name: "value", widget: "string" }
+              - label: "Microbiological Specifications"
+                name: "microbiologicalSpecs"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Specification Label (e.g. E. Coli)", name: "label", widget: "string" }
+                  - { label: "Value (e.g. Absent)", name: "value", widget: "string" }
+              - label: "Storage & Preservation Highlights"
+                name: "storageHighlights"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Storage Parameter (e.g. Temp)", name: "title", widget: "string" }
+                  - { label: "Value (e.g. ≤ 20°C)", name: "value", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+              - label: "Import & Compliance Highlights"
+                name: "complianceHighlights"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Compliance Parameter (e.g. FDA)", name: "title", widget: "string" }
+                  - { label: "Details", name: "text", widget: "text" }
+              - label: "Document List"
+                name: "documentList"
+                widget: "list"
+                required: false
+                field: { label: "Document Name", name: "document", widget: "string" }
+              - label: "Product Specific FAQs"
+                name: "faqs"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "text" }
               - label: "Variants (Tabs)"
                 name: "variants"
                 widget: "list"
@@ -196,6 +244,54 @@ collections:
                     name: "introduction"
                     widget: "text"
                     required: false
+                  - label: "Variant Origin Highlights"
+                    name: "originHighlights"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Highlight Title", name: "title", widget: "string" }
+                      - { label: "Highlight Details", name: "text", widget: "text" }
+                  - label: "Physicochemical Specifications"
+                    name: "physicochemicalSpecs"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Specification Label", name: "label", widget: "string" }
+                      - { label: "Value", name: "value", widget: "string" }
+                  - label: "Microbiological Specifications"
+                    name: "microbiologicalSpecs"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Specification Label", name: "label", widget: "string" }
+                      - { label: "Value", name: "value", widget: "string" }
+                  - label: "Variant Storage Highlights"
+                    name: "storageHighlights"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Storage Parameter", name: "title", widget: "string" }
+                      - { label: "Value", name: "value", widget: "string" }
+                      - { label: "Description", name: "desc", widget: "text" }
+                  - label: "Variant Import Compliance Highlights"
+                    name: "complianceHighlights"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Compliance Parameter", name: "title", widget: "string" }
+                      - { label: "Details", name: "text", widget: "text" }
+                  - label: "Document List"
+                    name: "documentList"
+                    widget: "list"
+                    required: false
+                    field: { label: "Document Name", name: "document", widget: "string" }
+                  - label: "Variant Specific FAQs"
+                    name: "faqs"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Question", name: "question", widget: "string" }
+                      - { label: "Answer", name: "answer", widget: "text" }
 
   - name: "insights"
     label: "Insights & Articles"

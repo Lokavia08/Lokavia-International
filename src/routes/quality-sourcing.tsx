@@ -24,6 +24,9 @@ export const Route = createFileRoute("/quality-sourcing")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/quality-sourcing" },
+    ],
   }),
   component: QualitySourcingPage,
 });
@@ -34,12 +37,10 @@ function QualitySourcingPage() {
       {/* 1. Hero Section */}
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:px-10 lg:pt-28">
         <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
-          Standards & Vetting
+          Quality-Controlled Sourcing for
         </div>
         <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-          Traceability and testing for
-          <br />
-          international supply chains.
+          <Highlight>Export-Grade Food Ingredients</Highlight>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
           <Highlight>

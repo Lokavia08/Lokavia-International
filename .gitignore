@@ -34,3 +34,11 @@ dist-ssr
 # Environment Variables
 .env
 .env.*
+
+# SEO skill cache
+.seo-cache/
+
+# Agent Customizations
+.agents/
+.refer/
+

@@ -22,6 +22,9 @@ export const Route = createFileRoute("/faq")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/faq" },
+    ],
   }),
   component: FAQPage,
 });
@@ -256,8 +259,27 @@ function FAQPage() {
     })
     .filter((section) => section.questions.length > 0);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.flatMap((section) =>
+      section.questions.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": Array.isArray(item.a) ? item.a.join(" ") : item.a,
+        },
+      }))
+    ),
+  };
+
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 lg:px-10 lg:pt-28">
         {/* Hero Header */}
         <div className="border-b border-hairline pb-12 mb-12">

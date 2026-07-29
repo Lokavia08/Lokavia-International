@@ -27,6 +27,9 @@ export const Route = createFileRoute("/about")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/about" },
+    ],
   }),
   component: AboutPage,
 });

@@ -19,6 +19,13 @@ export type Product = {
   introduction?: string;
   metaTitle?: string;
   metaDescription?: string;
+  originHighlights?: { title: string; text: string }[];
+  physicochemicalSpecs?: { label: string; value: string }[];
+  microbiologicalSpecs?: { label: string; value: string }[];
+  storageHighlights?: { title: string; value: string; desc: string }[];
+  complianceHighlights?: { title: string; text: string }[];
+  documentList?: string[];
+  faqs?: { question: string; answer: string }[];
   variants?: {
     id: string;
     name: string;
@@ -34,6 +41,13 @@ export type Product = {
     applications: string[];
     certifications?: string[];
     introduction?: string;
+    originHighlights?: { title: string; text: string }[];
+    physicochemicalSpecs?: { label: string; value: string }[];
+    microbiologicalSpecs?: { label: string; value: string }[];
+    storageHighlights?: { title: string; value: string; desc: string }[];
+    complianceHighlights?: { title: string; text: string }[];
+    documentList?: string[];
+    faqs?: { question: string; answer: string }[];
   }[];
 };
 

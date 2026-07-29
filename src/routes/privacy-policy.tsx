@@ -20,6 +20,9 @@ export const Route = createFileRoute("/privacy-policy")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/privacy-policy" },
+    ],
   }),
   component: PrivacyPolicyPage,
 });

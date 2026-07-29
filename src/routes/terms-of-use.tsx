@@ -20,6 +20,9 @@ export const Route = createFileRoute("/terms-of-use")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/terms-of-use" },
+    ],
   }),
   component: TermsOfUsePage,
 });

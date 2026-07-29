@@ -49,7 +49,89 @@
       "description": "Dehydrated white onion, milled to a consistent grade for sauces, seasonings, snack coatings, and ready-meal manufacturing.",
       "metaTitle": "Onion Powder Exporter India | Bulk Dehydrated Onion — Lokavia",
       "metaDescription": "Dehydrated onion powder from India, milled to consistent mesh size and moisture spec for sauces, seasonings, snacks, and RTE food manufacturing. MOQ 2000 kg.",
-      "category": "Dehydrated Vegetables"
+      "category": "Dehydrated Vegetables",
+      "originHighlights": [
+        {
+          "title": "Mahuva Growing Belt",
+          "text": "Sourced exclusively from the Mahuva region in Gujarat, globally recognized as the onion capital of India for its fertile sandy loam soil."
+        },
+        {
+          "title": "Late Winter Harvest",
+          "text": "Raw white onions are harvested between January and April, securing crop at peak solids and maximum sweetness."
+        },
+        {
+          "title": "Controlled Dehydration",
+          "text": "Fresh bulbs are processed through automated hot-air belt dryers at 55°C–65°C to preserve natural color, oils, and pungent aroma."
+        }
+      ],
+      "physicochemicalSpecs": [
+        { "label": "Moisture Content", "value": "≤ 6.0%" },
+        { "label": "Total Ash", "value": "≤ 5.0%" },
+        { "label": "Acid Insoluble Ash", "value": "≤ 0.5%" },
+        { "label": "Mesh Size", "value": "100% passing 80-100 mesh" },
+        { "label": "Pungency (as Thiosulfinate)", "value": "≥ 8.0 μmol/g" }
+      ],
+      "microbiologicalSpecs": [
+        { "label": "Total Plate Count (TPC)", "value": "≤ 50,000 CFU/g" },
+        { "label": "Yeast & Mold", "value": "≤ 100 CFU/g" },
+        { "label": "E. Coli", "value": "Absent in 1g" },
+        { "label": "Salmonella", "value": "Absent in 25g" },
+        { "label": "Coliforms", "value": "≤ 10 CFU/g" }
+      ],
+      "storageHighlights": [
+        {
+          "title": "Storage Temp",
+          "value": "≤ 20°C (68°F)",
+          "desc": "Keep stored in a cool warehouse environment to prevent natural color darkening."
+        },
+        {
+          "title": "Relative Humidity",
+          "value": "≤ 55% RH",
+          "desc": "Highly hygroscopic powder; strict humidity controls prevent clumping and block-caking."
+        },
+        {
+          "title": "Airflow Stacking",
+          "value": "Elevated Pallets",
+          "desc": "Always stack bags off the ground and away from walls to ensure adequate dry air circulation."
+        }
+      ],
+      "complianceHighlights": [
+        {
+          "title": "EU MRL Compliance",
+          "text": "Meets strict European Union Maximum Residue Limits for pesticide residues and heavy metals."
+        },
+        {
+          "title": "US FDA Registration",
+          "text": "Processed in FDA-registered facilities adhering to active preventive controls and GMP standards."
+        },
+        {
+          "title": "Customs HS Code",
+          "text": "Declared internationally under HS Code 07122000 (Dehydrated Onions) for streamlined clearance."
+        }
+      ],
+      "documentList": [
+        "Certificate of Analysis (CoA) per batch",
+        "Phytosanitary Certificate from NPPO India",
+        "Fumigation / Sterilization Certificate",
+        "Non-GMO Declaration",
+        "Allergen-Free Certificate",
+        "Bill of Lading & Packing List",
+        "Certificate of Origin"
+      ],
+      "faqs": [
+        {
+          "question": "What mesh sizes can you supply for dehydrated onions?",
+          "answer": "While our standard grade is a fine 80-100 mesh powder, we can customize the milling from 40 mesh coarse powder up to fine flour. We also supply dehydrated onion kibbled, flakes, and minced grades."
+        },
+        {
+          "question": "How do you prevent onion powder from caking during maritime transport?",
+          "answer": "We pack the powder in multi-wall kraft paper bags with heavy-duty PE liners (300+ gauge). Additionally, we place silica gel packets throughout the shipping container and utilize container desiccants to absorb ambient humidity in transit."
+        },
+        {
+          "question": "Do you offer steam-sterilized (micro-reduced) onion powder?",
+          "answer": "Yes, we can provide steam-treated or micro-reduced onion powder on request. This process significantly lowers the microbiological load (TPC < 5,000 CFU/g) to meet the strict quality standards of infant food and ready-to-eat seasoning manufacturers."
+        }
+      ]
     },
     {
       "applications": [
@@ -68,6 +150,111 @@
       "moqKg": 2000,
       "name": "Psyllium Husk",
       "slug": "psyllium-husk",
+      "tagline": "99% pure, high-purity export grades.",
+      "meshOptions": [
+        "30 (husk)",
+        "40 mesh powder",
+        "60 mesh powder"
+      ],
+      "specs": [
+        {
+          "label": "Purity",
+          "value": "95% / 98% / 99%"
+        },
+        {
+          "label": "Swell volume",
+          "value": "≥ 40 ml/g"
+        },
+        {
+          "label": "Moisture",
+          "value": "≤ 10%"
+        },
+        {
+          "label": "Foreign matter",
+          "value": "≤ 0.5%"
+        }
+      ],
+      "shelfLifeMonths": 24,
+      "certifications": [
+        "FSSAI",
+        "APEDA",
+        "Kosher",
+        "Halal"
+      ],
+      "introduction": "Lokavia's psyllium husk is a high-purity (up to 99%) natural dietary fiber processed from Plantago ovata seeds in Gujarat. It is primarily used by nutraceutical and supplement manufacturers as an active ingredient in digestive health, weight management, and fiber-supplement formulations.",
+      "image": "/product-psyllium-husk.jpg",
+      "description": "Psyllium (Plantago ovata) husk sourced from Gujarat. Available across 95%, 98%, and 99% purity grades for food, pharma, and supplement manufacturers.",
+      "metaTitle": "Psyllium Husk Exporter India | Food-Grade & Nutraceutical — Lokavia",
+      "metaDescription": "Psyllium husk (Isabgol/Plantago ovata), 85-99% purity, food-grade and nutraceutical-grade. Bulk export supply from India for supplements and food manufacturing.",
+      "category": "Nutraceutical Fibre",
+      "originHighlights": [
+        {
+          "title": "Mehsana Cultivation Belt",
+          "text": "Sourced from Banaskantha and Mehsana in Gujarat, yielding over 80% of the world's commercial Plantago ovata supply."
+        },
+        {
+          "title": "Spring Harvest Window",
+          "text": "Seeds are harvested during dry spring months (March–May) to ensure hulls are dry and yield high mucilage concentration."
+        },
+        {
+          "title": "Mechanical Separation",
+          "text": "Outer hulls are separated from seeds using multi-stage mechanical winnowing without solvents or chemical additives."
+        }
+      ],
+      "storageHighlights": [
+        {
+          "title": "Storage Temp",
+          "value": "≤ 25°C (77°F)",
+          "desc": "Store in a dry, temperate environment to prevent ambient moisture absorption."
+        },
+        {
+          "title": "Relative Humidity",
+          "value": "≤ 50% RH",
+          "desc": "Extremely hydrophilic; must remain sealed at low humidity to preserve swelling capacity."
+        },
+        {
+          "title": "Sanitary Controls",
+          "value": "Pest & Dust Free",
+          "desc": "Keep in clean zones off floors to prevent insect infestation and maintain hygiene."
+        }
+      ],
+      "complianceHighlights": [
+        {
+          "title": "USP & EP Monographs",
+          "text": "Complies with United States and European Pharmacopoeia standards for purity and swell index."
+        },
+        {
+          "title": "Kosher & Halal Certified",
+          "text": "Fully certified for global food manufacturing, dietary supplements, and clean-label bakery."
+        },
+        {
+          "title": "Customs HS Code",
+          "text": "Declared under HS Code 12119032 (Husk) or 12119039 (Powder) for rapid import validation."
+        }
+      ],
+      "documentList": [
+        "Certificate of Analysis (CoA) confirming purity and swell volume",
+        "Phytosanitary Certificate (NPPO India)",
+        "Fumigation / Treatment Certificate",
+        "Microbiological Clearance Certificate",
+        "Heavy Metal Analysis Report",
+        "Kosher & Halal Certifications",
+        "Certificate of Origin"
+      ],
+      "faqs": [
+        {
+          "question": "What is the difference between Nutraceutical and Food-Grade psyllium?",
+          "answer": "Nutraceutical-grade psyllium husk is held to the highest purity standards (typically 99%) and strict microbiological limits (TPC ≤ 10,000 CFU/g) for capsules and dietary supplements. Food-grade psyllium ranges from 85% to 98% purity, optimized as a functional binder, stabilizer, or texturizer in gluten-free baking and processed meats."
+        },
+        {
+          "question": "How do you test and measure the swelling index of psyllium husk?",
+          "answer": "We test the swelling index using standard pharmacopoeia methods: 1 gram of psyllium husk is placed in a 100ml graduated cylinder filled with water, shaken vigorously, and left to stand for 24 hours. The resulting mucilage volume is measured in milliliters per gram. Our nutraceutical grades guarantee a swelling index of ≥ 40 ml/g."
+        },
+        {
+          "question": "What mesh size options do you offer for psyllium powder?",
+          "answer": "We offer whole husk (30-40 mesh) as well as milled psyllium powder in 40 mesh, 60 mesh, 70 mesh, and fine 100 mesh sizes, depending on the requirement of your formulation."
+        }
+      ],
       "variants": [
         {
           "applications": [
@@ -112,7 +299,66 @@
           "introduction": "Lokavia's psyllium husk is a high-purity (up to 99%) natural dietary fiber processed from Plantago ovata seeds in Gujarat. It is primarily used by nutraceutical and supplement manufacturers as an active ingredient in digestive health, weight management, and fiber-supplement formulations.",
           "id": "nutraceutical",
           "description": "Psyllium (Plantago ovata) husk sourced from Gujarat. Available across 95%, 98%, and 99% purity grades for food, pharma, and supplement manufacturers.",
-          "category": "Nutraceutical Fibre"
+          "category": "Nutraceutical Fibre",
+          "originHighlights": [
+            {
+              "title": "Mehsana Cultivation Belt",
+              "text": "Sourced from Banaskantha and Mehsana in Gujarat, yielding over 80% of the world's commercial Plantago ovata supply."
+            },
+            {
+              "title": "Spring Harvest Window",
+              "text": "Seeds are harvested during dry spring months (March–May) to ensure hulls are dry and yield high mucilage concentration."
+            },
+            {
+              "title": "Mechanical Separation",
+              "text": "Outer hulls are separated from seeds using multi-stage mechanical winnowing without solvents or chemical additives."
+            }
+          ],
+          "physicochemicalSpecs": [
+            { "label": "Purity (Husk Content)", "value": "≥ 99.0%" },
+            { "label": "Swelling Index", "value": "≥ 40 ml/g" },
+            { "label": "Moisture Content", "value": "≤ 9.0%" },
+            { "label": "Light Extraneous Matter", "value": "≤ 0.5%" },
+            { "label": "Heavy Extraneous Matter", "value": "≤ 0.1%" }
+          ],
+          "microbiologicalSpecs": [
+            { "label": "Total Plate Count (TPC)", "value": "≤ 10,000 CFU/g" },
+            { "label": "Yeast & Mold", "value": "≤ 100 CFU/g" },
+            { "label": "E. Coli", "value": "Absent in 1g" },
+            { "label": "Salmonella", "value": "Absent in 25g" },
+            { "label": "Coliforms", "value": "Absent in 1g" }
+          ],
+          "storageHighlights": [
+            {
+              "title": "Storage Temp",
+              "value": "≤ 25°C (77°F)",
+              "desc": "Store in a dry, temperate environment to prevent ambient moisture absorption."
+            },
+            {
+              "title": "Relative Humidity",
+              "value": "≤ 50% RH",
+              "desc": "Extremely hydrophilic; must remain sealed at low humidity to preserve swelling capacity."
+            },
+            {
+              "title": "Sanitary Controls",
+              "value": "Pest & Dust Free",
+              "desc": "Keep in clean zones off floors to prevent insect infestation and maintain hygiene."
+            }
+          ],
+          "complianceHighlights": [
+            {
+              "title": "USP & EP Monographs",
+              "text": "Complies with United States and European Pharmacopoeia standards for purity and swell index."
+            },
+            {
+              "title": "Kosher & Halal Certified",
+              "text": "Fully certified for global food manufacturing, dietary supplements, and clean-label bakery."
+            },
+            {
+              "title": "Customs HS Code",
+              "text": "Declared under HS Code 12119032 (Husk) or 12119039 (Powder) for rapid import validation."
+            }
+          ]
         },
         {
           "applications": [
@@ -157,46 +403,68 @@
           "introduction": "Lokavia's food-grade psyllium husk is a clean, natural hydrocolloid binder and dietary fiber ingredient. It is used as a functional stabilizer and water-binding agent in commercial baking, gluten-free formulations, and processed food applications.",
           "id": "food-grade",
           "description": "Food-grade psyllium husk and powder sourced from Gujarat agricultural belt, ideal as a natural stabilizer, binder, and fiber-enrichment ingredient in commercial baking, gluten-free formulations, and meat processing.",
-          "category": "Food-Grade Psyllium"
+          "category": "Food-Grade Psyllium",
+          "originHighlights": [
+            {
+              "title": "Mehsana Cultivation Belt",
+              "text": "Sourced from Banaskantha and Mehsana in Gujarat, yielding over 80% of the world's commercial Plantago ovata supply."
+            },
+            {
+              "title": "Spring Harvest Window",
+              "text": "Seeds are harvested during dry spring months (March–May) to ensure hulls are dry and yield high mucilage concentration."
+            },
+            {
+              "title": "Mechanical Separation",
+              "text": "Outer hulls are separated from seeds using multi-stage mechanical winnowing without solvents or chemical additives."
+            }
+          ],
+          "physicochemicalSpecs": [
+            { "label": "Purity (Husk Content)", "value": "85% / 95% / 98%" },
+            { "label": "Swelling Index", "value": "≥ 30 ml/g" },
+            { "label": "Moisture Content", "value": "≤ 11.0%" },
+            { "label": "Light Extraneous Matter", "value": "≤ 1.0%" },
+            { "label": "Heavy Extraneous Matter", "value": "≤ 0.2%" }
+          ],
+          "microbiologicalSpecs": [
+            { "label": "Total Plate Count (TPC)", "value": "≤ 50,000 CFU/g" },
+            { "label": "Yeast & Mold", "value": "≤ 100 CFU/g" },
+            { "label": "E. Coli", "value": "Absent in 1g" },
+            { "label": "Salmonella", "value": "Absent in 25g" },
+            { "label": "Coliforms", "value": "≤ 10 CFU/g" }
+          ],
+          "storageHighlights": [
+            {
+              "title": "Storage Temp",
+              "value": "≤ 25°C (77°F)",
+              "desc": "Store in a dry, temperate environment to prevent ambient moisture absorption."
+            },
+            {
+              "title": "Relative Humidity",
+              "value": "≤ 50% RH",
+              "desc": "Extremely hydrophilic; must remain sealed at low humidity to preserve swelling capacity."
+            },
+            {
+              "title": "Sanitary Controls",
+              "value": "Pest & Dust Free",
+              "desc": "Keep in clean zones off floors to prevent insect infestation and maintain hygiene."
+            }
+          ],
+          "complianceHighlights": [
+            {
+              "title": "USP & EP Monographs",
+              "text": "Complies with United States and European Pharmacopoeia standards for purity and swell index."
+            },
+            {
+              "title": "Kosher & Halal Certified",
+              "text": "Fully certified for global food manufacturing, dietary supplements, and clean-label bakery."
+            },
+            {
+              "title": "Customs HS Code",
+              "text": "Declared under HS Code 12119032 (Husk) or 12119039 (Powder) for rapid import validation."
+            }
+          ]
         }
-      ],
-      "tagline": "99% pure, high-purity export grades.",
-      "meshOptions": [
-        "30 (husk)",
-        "40 mesh powder",
-        "60 mesh powder"
-      ],
-      "specs": [
-        {
-          "label": "Purity",
-          "value": "95% / 98% / 99%"
-        },
-        {
-          "label": "Swell volume",
-          "value": "≥ 40 ml/g"
-        },
-        {
-          "label": "Moisture",
-          "value": "≤ 10%"
-        },
-        {
-          "label": "Foreign matter",
-          "value": "≤ 0.5%"
-        }
-      ],
-      "shelfLifeMonths": 24,
-      "certifications": [
-        "FSSAI",
-        "APEDA",
-        "Kosher",
-        "Halal"
-      ],
-      "introduction": "Lokavia's psyllium husk is a high-purity (up to 99%) natural dietary fiber processed from Plantago ovata seeds in Gujarat. It is primarily used by nutraceutical and supplement manufacturers as an active ingredient in digestive health, weight management, and fiber-supplement formulations.",
-      "image": "/product-psyllium-husk.jpg",
-      "description": "Psyllium (Plantago ovata) husk sourced from Gujarat. Available across 95%, 98%, and 99% purity grades for food, pharma, and supplement manufacturers.",
-      "metaTitle": "Psyllium Husk Exporter India | Food-Grade & Nutraceutical — Lokavia",
-      "metaDescription": "Psyllium husk (Isabgol/Plantago ovata), 85-99% purity, food-grade and nutraceutical-grade. Bulk export supply from India for supplements and food manufacturing.",
-      "category": "Nutraceutical Fibre"
+      ]
     },
     {
       "applications": [
@@ -247,7 +515,88 @@
       "description": "Steam-treated, low-temperature-dried garlic milled to a fine powder. Preserves sharp aroma and pungency for industrial seasoning use.",
       "metaTitle": "Garlic Powder Exporter India | Bulk Dehydrated Garlic — Lokavia",
       "metaDescription": "Steam-treated, low-temperature-dried garlic powder for flavor systems, spice blends, and QSR applications. Export-grade specs, bulk supply from India.",
-      "category": "Dehydrated Vegetables"
+      "category": "Dehydrated Vegetables",
+      "originHighlights": [
+        {
+          "title": "Neemuch Sourcing Belt",
+          "text": "Sourced from Neemuch and Mandsaur in Madhya Pradesh, known for garlic rich in natural allicin."
+        },
+        {
+          "title": "Winter Peak Harvest",
+          "text": "Harvested from February to April, securing bulbs with high density, strong oil content, and sharp pungency."
+        },
+        {
+          "title": "Low-Temp Pulverization",
+          "text": "Cloves are dried at low heat (50°C–58°C) to protect essential volatile oils, then milled to uniform mesh."
+        }
+      ],
+      "physicochemicalSpecs": [
+        { "label": "Moisture Content", "value": "≤ 3.25%" },
+        { "label": "Total Ash", "value": "≤ 4.31%" },
+        { "label": "Acid Insoluble Ash", "value": "≤ 0.4%" },
+        { "label": "Mesh Size", "value": "100% passing 80-100 mesh" },
+        { "label": "Volatile Oil", "value": "≥ 0.3%" }
+      ],
+      "microbiologicalSpecs": [
+        { "label": "Total Plate Count (TPC)", "value": "≤ 50,000 CFU/g" },
+        { "label": "Yeast & Mold", "value": "≤ 100 CFU/g" },
+        { "label": "E. Coli", "value": "Absent in 1g" },
+        { "label": "Salmonella", "value": "Absent in 25g" },
+        { "label": "Coliforms", "value": "≤ 10 CFU/g" }
+      ],
+      "storageHighlights": [
+        {
+          "title": "Storage Temp",
+          "value": "≤ 18°C (64°F)",
+          "desc": "Store in a cool warehouse room to prevent essential oil vaporization."
+        },
+        {
+          "title": "Relative Humidity",
+          "value": "≤ 50% RH",
+          "desc": "Garlic contains high natural sugars; strict low-humidity is mandatory to avoid solidification."
+        },
+        {
+          "title": "Dry Stacking",
+          "value": "Dual PE Liners",
+          "desc": "Keep stored in double-PE lined kraft bags on pallets to insulate from ground moisture."
+        }
+      ],
+      "complianceHighlights": [
+        {
+          "title": "ASTA Standards",
+          "text": "Complies with American Spice Trade Association requirements for cleanliness and purity."
+        },
+        {
+          "title": "Pesticide Limits",
+          "text": "Strictly monitored for pesticide residues, complying with EU food safety and MRL regulations."
+        },
+        {
+          "title": "Customs HS Code",
+          "text": "Declared under HS Code 07129020 / 07129030 (Garlic Powder) for custom clearance."
+        }
+      ],
+      "documentList": [
+        "Certificate of Analysis (CoA) per batch",
+        "Phytosanitary Certificate from NPPO India",
+        "Fumigation / Heat Treatment Certificate",
+        "Allergen-Free Declaration",
+        "Non-GMO Declaration",
+        "Bill of Lading & Commercial Invoice"
+      ],
+      "faqs": [
+        {
+          "question": "What is the typical moisture percentage of your garlic powder?",
+          "answer": "We dry our garlic powder down to a very low moisture level of ≤ 3.25% to maximize its shelf-life stability and prevent natural clumping or caking in storage."
+        },
+        {
+          "question": "Do you offer organic-certified garlic powder?",
+          "answer": "Yes, we can supply organic-certified garlic powder sourced from USDA and EU-compliant organic farms on request, subject to specific MOQ requirements."
+        },
+        {
+          "question": "What is the shelf life of your garlic powder?",
+          "answer": "When kept in its original sealed packaging in a cool, dry environment (RH ≤ 50%, temperature ≤ 18°C), our dehydrated garlic powder has a shelf life of up to 24 months."
+        }
+      ]
     },
     {
       "applications": [
@@ -299,7 +648,88 @@
       "description": "Cochin and Assam origin ginger, cleaned, dried, and pulverised. Warm, pungent aroma suitable for beverages, baked goods, and nutraceutical use.",
       "metaTitle": "Ginger Powder Exporter India | Bulk Dehydrated Ginger — Lokavia",
       "metaDescription": "Dehydrated ginger powder for spice blends and functional food formulation. Clean flavor, sharp heat, export-grade specs from India's ginger belt.",
-      "category": "Dried Spices"
+      "category": "Dried Spices",
+      "originHighlights": [
+        {
+          "title": "Cochin & Assam Belts",
+          "text": "Sourced from Cochin (highly aromatic, low fiber) and Assam (deep heat and organic cultivation practice)."
+        },
+        {
+          "title": "Dry Season Harvest",
+          "text": "Rhizomes are harvested from December to March at peak maturity to guarantee optimal active gingerols."
+        },
+        {
+          "title": "Scraped Dehydration",
+          "text": "Ginger skin is carefully scraped and dried in automated drying beds (50°C–60°C) to lock in gingerol oils."
+        }
+      ],
+      "physicochemicalSpecs": [
+        { "label": "Moisture Content", "value": "≤ 4.85%" },
+        { "label": "Total Ash", "value": "≤ 3.94%" },
+        { "label": "Acid Insoluble Ash", "value": "≤ 0.5%" },
+        { "label": "Mesh Size", "value": "100% passing 80-100 mesh" },
+        { "label": "Volatile Gingerol Content", "value": "≥ 1.5%" }
+      ],
+      "microbiologicalSpecs": [
+        { "label": "Total Plate Count (TPC)", "value": "≤ 50,000 CFU/g" },
+        { "label": "Yeast & Mold", "value": "≤ 100 CFU/g" },
+        { "label": "E. Coli", "value": "Absent in 1g" },
+        { "label": "Salmonella", "value": "Absent in 25g" },
+        { "label": "Coliforms", "value": "≤ 10 CFU/g" }
+      ],
+      "storageHighlights": [
+        {
+          "title": "Storage Temp",
+          "value": "≤ 22°C (71°F)",
+          "desc": "Store in dry warehouses away from heat sources to preserve volatile spice compounds."
+        },
+        {
+          "title": "Relative Humidity",
+          "value": "≤ 55% RH",
+          "desc": "Keep humidity low to prevent aroma fading, moisture absorption, and mold development."
+        },
+        {
+          "title": "Sealed Storage",
+          "value": "Hermetic Bags",
+          "desc": "Keep bags tightly closed; open air degrades the gingerol oil content over time."
+        }
+      ],
+      "complianceHighlights": [
+        {
+          "title": "Heavy Metals",
+          "text": "Meets strict US and EU limits for heavy metals (lead, cadmium) in powdered root spices."
+        },
+        {
+          "title": "Non-Sulfured",
+          "text": "100% natural ginger processing, completely free from sulfur dioxide bleaching or treatment."
+        },
+        {
+          "title": "Customs HS Code",
+          "text": "Declared under HS Code 09101210 (Ginger Powder) for standard international exports."
+        }
+      ],
+      "documentList": [
+        "Certificate of Analysis (CoA) per batch",
+        "Phytosanitary Certificate from NPPO India",
+        "Fumigation / Sterilization Certificate",
+        "Heavy Metal Analysis Report",
+        "Non-GMO Declaration",
+        "Certificate of Origin"
+      ],
+      "faqs": [
+        {
+          "question": "What is the active gingerol percentage in your ginger powder?",
+          "answer": "Our ginger powder contains a verified volatile gingerol content of ≥ 1.5%, which ensures a highly aromatic and pungent heat profile for seasonings and beverages."
+        },
+        {
+          "question": "Is your ginger powder free from sulphur treatment?",
+          "answer": "Yes, our ginger powder is 100% natural and completely free from sulphur dioxide treatment or artificial bleaching agents, preserving its clean taste and natural color."
+        },
+        {
+          "question": "Do you supply dehydrated ginger slices or flakes?",
+          "answer": "Yes, we can supply dried ginger whole, dried ginger sliced, and dried ginger powder depending on your manufacturing requirements."
+        }
+      ]
     }
   ]
 }

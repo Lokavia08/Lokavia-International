@@ -150,6 +150,30 @@ function RootShell({ children }: { children: ReactNode }) {
       "addressLocality": "Surat",
       "addressRegion": "Gujarat",
       "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@lokaviainternational.com",
+        "areaServed": "worldwide",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/lokavia"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Lokavia International",
+    "url": "https://www.lokaviainternational.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.lokaviainternational.com/products?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   };
 
@@ -172,6 +196,10 @@ function RootShell({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body>

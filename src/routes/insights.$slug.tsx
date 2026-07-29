@@ -31,6 +31,9 @@ export const Route = createFileRoute("/insights/$slug")({
         { property: "og:type", content: "article" },
         { name: "robots", content: "index, follow" },
       ],
+      links: [
+        { rel: "canonical", href: `https://www.lokaviainternational.com/insights/${post.slug}` },
+      ],
     };
   },
   notFoundComponent: () => (

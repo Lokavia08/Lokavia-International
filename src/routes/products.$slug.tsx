@@ -4,6 +4,7 @@ import { getProduct, products, type Product } from "@/lib/products";
 import { Highlight } from "@/components/highlight";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -33,6 +34,9 @@ export const Route = createFileRoute("/products/$slug")({
         { property: "og:url", content: `https://www.lokaviainternational.com/products/${product.slug}` },
         { property: "og:type", content: "product" },
         { name: "robots", content: "index, follow" },
+      ],
+      links: [
+        { rel: "canonical", href: `https://www.lokaviainternational.com/products/${product.slug}` },
       ],
     };
   },
@@ -81,7 +85,58 @@ function ProductPage() {
   const nutraceuticalVariant = product.variants?.find((v) => v.id === "nutraceutical");
   const nutraceuticalProduct = nutraceuticalVariant ? { ...product, ...nutraceuticalVariant } : product;
 
-  const productSchema = {
+  const productSchema = isPsyllium && product.variants && product.variants.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ProductGroup",
+    "name": product.name,
+    "description": product.description,
+    "url": `https://www.lokaviainternational.com/products/${product.slug}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Lokavia"
+    },
+    "hasVariant": product.variants.map((v) => ({
+      "@type": "Product",
+      "name": v.name,
+      "description": v.description,
+      "sku": `${product.slug}-${v.id}`,
+      "category": v.category,
+      "image": `https://www.lokaviainternational.com${product.image}`,
+      "offers": {
+        "@type": "Offer",
+        "url": `https://www.lokaviainternational.com/quote?product=${product.slug}&variant=${v.id}`,
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Bulk export contract pricing upon Request for Quote (RFQ)"
+        },
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Lokavia International"
+        }
+      },
+      "additionalProperty": [
+        ...v.specs.map((s) => ({
+          "@type": "PropertyValue",
+          "name": s.label,
+          "value": s.value
+        })),
+        {
+          "@type": "PropertyValue",
+          "name": "Minimum Order Quantity",
+          "value": `${v.moqKg} kg`,
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Shelf Life",
+          "value": `${v.shelfLifeMonths} months`
+        }
+      ]
+    }))
+  } : {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
@@ -122,7 +177,13 @@ function ProductPage() {
     ],
     "offers": {
       "@type": "Offer",
-      "url": `https://www.lokaviainternational.com/quote`,
+      "url": `https://www.lokaviainternational.com/quote?product=${product.slug}`,
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "description": "Bulk export contract pricing upon Request for Quote (RFQ)"
+      },
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
@@ -235,6 +296,28 @@ function ProductPage() {
   );
 }
 
+function FaqAccordionItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="rounded-xl border border-hairline bg-white overflow-hidden transition-all duration-300">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 py-5 text-left font-semibold text-ink hover:text-[var(--orange)] transition-colors duration-300 flex justify-between items-center gap-4"
+      >
+        <span>{question}</span>
+        <span className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+          ▼
+        </span>
+      </button>
+      {isOpen && (
+        <div className="px-6 pb-5 text-sm text-ink-soft leading-relaxed border-t border-hairline pt-4 bg-[oklch(0.99_0.001_260)]">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ProductDetails({ p, slug }: { p: any; slug: string }) {
   return (
     <>
@@ -276,7 +359,9 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
             )}
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-ink-soft">
-              <Highlight>{p.description}</Highlight>
+              <Highlight>
+                {`Lokavia supplies ${p.name.toLowerCase()} from India for food manufacturers, ingredient distributors, and private-label brands that need consistent mesh size, low moisture, export packaging, and reliable documentation. Each order can be aligned to buyer specifications, destination-market requirements, and planned production use.`}
+              </Highlight>
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8">
@@ -327,38 +412,142 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
         </div>
       </section>
 
-      {/* Specs + applications */}
-      <section className="border-t border-hairline">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-12 lg:px-10">
-          <div className="lg:col-span-5">
-            <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
-              Specification
+      {/* Specs + analytical profile */}
+      <section className="border-t border-hairline bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+          <div className="grid gap-16 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
+                Specification
+              </div>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight text-ink">
+                Technical profile.
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+                <Highlight>
+                  Third-party lab reports are issued with every consignment. Bespoke
+                  specifications available on request.
+                </Highlight>
+              </p>
             </div>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-ink">
-              Technical profile.
-            </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
-              <Highlight>
-                Third-party lab reports are issued with every consignment. Bespoke
-                specifications available on request.
-              </Highlight>
-            </p>
-          </div>
-          <div className="lg:col-span-7">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {p.specs.map((s: any) => (
-                <div
-                  key={s.label}
-                  className="rounded-xl border border-hairline bg-[oklch(0.99_0.001_260)] p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--orange)]/30"
-                >
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft">{s.label}</dt>
-                  <dd className="mt-2 text-xl font-bold text-ink tracking-tight">{s.value}</dd>
+            
+            <div className="lg:col-span-8">
+              {p.physicochemicalSpecs || p.microbiologicalSpecs ? (
+                <div className="grid gap-12 md:grid-cols-2">
+                  {/* Physicochemical Specs */}
+                  {p.physicochemicalSpecs && (
+                    <div>
+                      <h3 className="text-base font-bold text-ink border-b border-hairline pb-2 mb-4 uppercase tracking-wider text-ink-soft">
+                        Physicochemical Parameters
+                      </h3>
+                      <div className="divide-y divide-hairline">
+                        {p.physicochemicalSpecs.map((s: any) => (
+                          <div key={s.label} className="py-3.5 flex justify-between gap-4 text-sm">
+                            <span className="font-medium text-ink-soft">{s.label}</span>
+                            <span className="font-bold text-ink text-right">{s.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Microbiological Specs */}
+                  {p.microbiologicalSpecs && (
+                    <div>
+                      <h3 className="text-base font-bold text-ink border-b border-hairline pb-2 mb-4 uppercase tracking-wider text-ink-soft">
+                        Microbiological Limits
+                      </h3>
+                      <div className="divide-y divide-hairline">
+                        {p.microbiologicalSpecs.map((s: any) => (
+                          <div key={s.label} className="py-3.5 flex justify-between gap-4 text-sm">
+                            <span className="font-medium text-ink-soft">{s.label}</span>
+                            <span className="font-bold text-ink text-right">{s.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              ))}
+              ) : (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {p.specs.map((s: any) => (
+                    <div
+                      key={s.label}
+                      className="rounded-xl border border-hairline bg-[oklch(0.99_0.001_260)] p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-[var(--orange)]/30"
+                    >
+                      <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft">{s.label}</dt>
+                      <dd className="mt-2 text-xl font-bold text-ink tracking-tight">{s.value}</dd>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Sourcing & Sourcing Hubs Section */}
+      {p.originHighlights && p.originHighlights.length > 0 && (
+        <section className="border-t border-hairline bg-[oklch(0.99_0.001_260)]">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+            <div className="lg:col-span-5">
+              <span className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
+                Agricultural Origin
+              </span>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight text-ink">
+                Sourced at Origin.
+              </h2>
+              <div className="mt-8 space-y-6">
+                {p.originHighlights.map((hl: any, idx: number) => (
+                  <div key={idx} className="flex gap-4">
+                    <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[var(--orange)]/10 text-[var(--orange)] font-bold text-sm">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-ink">{hl.title}</h3>
+                      <p className="mt-1 text-sm text-ink-soft leading-relaxed">{hl.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <div className="overflow-hidden rounded-2xl border border-hairline shadow-md aspect-[16/10]">
+                <div className="w-full h-full bg-[var(--navy)]/5 flex flex-col justify-center p-8 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--orange)]/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--navy)]/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
+                  <div className="relative z-10">
+                    <div className="text-xs font-semibold uppercase tracking-widest text-[var(--orange)] mb-2">
+                      Sourcing Hub Protocol
+                    </div>
+                    <h3 className="text-xl font-bold text-ink mb-4">
+                      Traceable Origin Pipeline
+                    </h3>
+                    <ul className="space-y-3 text-sm text-ink-soft">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--orange)] font-bold">✓</span>
+                        <span>Direct contracts with farms in vetted regional belts</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--orange)] font-bold">✓</span>
+                        <span>Harvesting timed at peak sugar and oil concentrations</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--orange)] font-bold">✓</span>
+                        <span>Low-temperature dehydration to lock in essential volatile oils</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--orange)] font-bold">✓</span>
+                        <span>Lot-by-lot traceability from field drying to final export stuffing</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Applications + packaging */}
       <section className="border-t border-hairline bg-[oklch(0.985_0.002_260)]/60">
@@ -417,6 +606,138 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Preservation & Compliance Section */}
+      {((p.storageHighlights && p.storageHighlights.length > 0) || (p.complianceHighlights && p.complianceHighlights.length > 0)) && (
+        <section className="border-t border-hairline bg-white">
+          <div className="mx-auto max-w-7xl grid gap-8 px-6 py-24 lg:grid-cols-2 lg:px-10">
+            {p.storageHighlights && p.storageHighlights.length > 0 && (
+              <div className="rounded-2xl border border-hairline p-8 bg-[oklch(0.99_0.001_260)] shadow-sm">
+                <h3 className="text-2xl font-bold tracking-tight text-ink">
+                  Storage & Preservation
+                </h3>
+                <p className="mt-2 text-sm text-ink-soft">
+                  Precise environment thresholds required to maintain product shelf life:
+                </p>
+                <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                  {p.storageHighlights.map((hl: any, idx: number) => (
+                    <div key={idx} className="rounded-xl border border-hairline bg-white p-4 shadow-sm flex flex-col justify-between">
+                      <div>
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-ink-soft">
+                          {hl.title}
+                        </div>
+                        <div className="mt-1 text-base font-extrabold text-[var(--orange)] tracking-tight">
+                          {hl.value}
+                        </div>
+                      </div>
+                      <p className="mt-2 text-xs text-ink-soft leading-normal">
+                        {hl.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {p.complianceHighlights && p.complianceHighlights.length > 0 && (
+              <div className="rounded-2xl border border-hairline p-8 bg-[oklch(0.99_0.001_260)] shadow-sm flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold tracking-tight text-ink">
+                    Import Regulations & Compliance
+                  </h3>
+                  <p className="mt-2 text-sm text-ink-soft">
+                    Vetted documentation compliance for standard global shipping pipelines:
+                  </p>
+                  <div className="mt-6 space-y-4">
+                    {p.complianceHighlights.map((hl: any, idx: number) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                          <Check size={12} strokeWidth={3} />
+                        </span>
+                        <div>
+                          <h4 className="text-sm font-bold text-ink">{hl.title}</h4>
+                          <p className="mt-0.5 text-xs text-ink-soft leading-normal">{hl.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Documentation Section */}
+      {p.documentList && p.documentList.length > 0 && (
+        <section className="border-t border-hairline bg-[oklch(0.985_0.002_260)]/60">
+          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+            <div className="rounded-2xl border border-hairline bg-white p-8 shadow-sm">
+              <h3 className="text-xl font-bold tracking-tight text-ink">
+                Export Documentation Checklist
+              </h3>
+              <p className="mt-2 text-sm text-ink-soft">
+                We supply a complete document pack with every ocean shipment to ensure clean customs clearance at destination ports:
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {p.documentList.map((doc: string) => (
+                  <div key={doc} className="flex items-center gap-3 text-sm text-ink">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                      <span className="text-xs">✓</span>
+                    </span>
+                    <span>{doc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Product-Specific FAQs Accordion */}
+      {p.faqs && p.faqs.length > 0 && (
+        <section className="border-t border-hairline bg-white">
+          <div className="mx-auto max-w-3xl px-6 py-24 lg:px-10">
+            <div className="text-center mb-12">
+              <span className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
+                Product Help
+              </span>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {p.faqs.map((faq: any, idx: number) => (
+                <FaqAccordionItem key={idx} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Sample Request Banner */}
+      <section className="border-t border-hairline bg-[var(--navy)] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 text-center">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--orange)]">
+            Quality Assurance Verification
+          </span>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight">
+            Request a Commercial Sample
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-base text-gray-300 leading-relaxed">
+            We understand that food manufacturing lines require strict pre-shipment approvals. Lokavia offers 500g to 2kg sample shipments dispatched via express air courier for laboratory testing and sensory evaluation before contract signing.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/quote"
+              search={{ product: slug } as never}
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--orange)] px-8 py-4 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-md hover:brightness-105 active:scale-[0.98]"
+            >
+              Order Testing Sample <ArrowUpRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

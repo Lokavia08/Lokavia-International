@@ -24,6 +24,9 @@ export const Route = createFileRoute("/products/")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/products" },
+    ],
   }),
   component: ProductsIndex,
 });
@@ -38,8 +41,8 @@ function ProductsIndex() {
         <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
           Catalogue · 2026
         </div>
-        <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-          <Highlight>Our Products</Highlight>
+         <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <Highlight>Bulk Dehydrated Ingredients from India</Highlight>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
           <Highlight>

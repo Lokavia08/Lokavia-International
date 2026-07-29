@@ -23,6 +23,10 @@ export const Route = createFileRoute("/insights/")({
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/insights" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/insights" },
     ],
   }),
   component: InsightsPage,

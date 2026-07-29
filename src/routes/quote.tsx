@@ -25,6 +25,9 @@ export const Route = createFileRoute("/quote")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/quote" },
+    ],
   }),
   component: QuotePage,
 });
@@ -80,13 +83,11 @@ function QuotePage() {
           Contact · International <Highlight>buyers</Highlight>
         </div>
         <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-          Get a quote.
+          <Highlight>Request a Bulk Export Quote</Highlight>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
           <Highlight>
-            Share the commodity, target volume, and destination port. Our export
-            desk responds within one business day with pricing, spec sheets, and
-            documentation.
+            Share your target product, volume, destination country, preferred packaging, and required documents. Our export desk will respond with pricing guidance, specification options, and next steps within one business day.
           </Highlight>
         </p>
       </section>

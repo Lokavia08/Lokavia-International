@@ -27,6 +27,9 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://www.lokaviainternational.com/" },
+    ],
   }),
   component: Index,
 });
@@ -201,15 +204,13 @@ function Index() {
               Agri-commodity exporter · India
             </div>
             <h1 className="mt-8 text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.5rem]">
-              <Highlight>India's agri-commodity exporter,</Highlight>
+              <Highlight>Exporting Indian dehydrated</Highlight>
               <br />
-              <Highlight>built for global buyers.</Highlight>
+              <Highlight>ingredients for global buyers.</Highlight>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
               <Highlight>
-                Lokavia supplies dehydrated onion, garlic, ginger, and psyllium husk
-                to food manufacturers, ingredient distributors, and private-label brands —
-                built to the mesh size, moisture, and purity specifications your production line requires.
+                Lokavia supplies onion powder, garlic powder, ginger powder, and psyllium husk from India with defined specs, third-party testing support, export documentation, and bulk packaging for manufacturers, distributors, and private-label buyers.
               </Highlight>
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
