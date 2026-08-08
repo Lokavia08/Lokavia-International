@@ -37,6 +37,9 @@ export function mdToHtml(md: string): string {
   // Convert Windows newlines to Unix
   let html = md.replace(/\r\n/g, "\n");
 
+  // Horizontal rules
+  html = html.replace(/^[\-\*]{3,}$/gim, '<hr class="my-8 border-hairline" />');
+
   // Headings
   html = html.replace(/^### (.*$)/gim, '<h4 class="text-lg font-bold text-ink mt-6 mb-2">$1</h4>');
   html = html.replace(/^## (.*$)/gim, '<h3 class="text-xl font-bold text-ink mt-8 mb-3">$1</h3>');
@@ -54,11 +57,92 @@ export function mdToHtml(md: string): string {
   // Links
   html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[var(--orange)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">$1</a>');
 
-  // Parse Lists (State Machine)
+  // Blockquotes
+  html = html.replace(/^>\s*(.*$)/gim, '<blockquote class="my-6 border-l-4 border-[var(--orange)] bg-orange-50/20 py-3 pl-4 pr-3 text-ink-soft italic rounded-r-lg">$1</blockquote>');
+
+  // Parse Tables
   const lines = html.split("\n");
+  const processedTableLines: string[] = [];
+  let tableLines: string[] = [];
+  let inTable = false;
+
+  const isTableLine = (l: string) => {
+    const t = l.trim();
+    return t.startsWith("|") && t.endsWith("|") && t.length > 2;
+  };
+
+  const isSeparatorLine = (l: string) => {
+    const t = l.trim();
+    return /^\|[\s:\-|\+]+\|$/.test(t);
+  };
+
+  const renderTable = (rows: string[]) => {
+    if (rows.length < 2) return rows.join("\n");
+
+    const headerLine = rows[0].trim();
+    const sepIndex = rows.findIndex((r, idx) => idx > 0 && isSeparatorLine(r));
+    if (sepIndex === -1) return rows.join("\n");
+
+    const headerCells = headerLine
+      .slice(1, -1)
+      .split("|")
+      .map((c) => c.trim());
+
+    const bodyRows = rows.slice(sepIndex + 1).map((r) =>
+      r
+        .trim()
+        .slice(1, -1)
+        .split("|")
+        .map((c) => c.trim())
+    );
+
+    const ths = headerCells
+      .map(
+        (cell) =>
+          `<th class="border-b border-hairline bg-[oklch(0.97_0.003_260)] px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-ink">${cell}</th>`
+      )
+      .join("");
+
+    const trs = bodyRows
+      .map((row) => {
+        const tds = row
+          .map(
+            (cell) =>
+              `<td class="px-4 py-3 text-sm text-ink-soft border-b border-hairline/60">${cell}</td>`
+          )
+          .join("");
+        return `<tr class="hover:bg-hairline/10 transition-colors">${tds}</tr>`;
+      })
+      .join("");
+
+    return `<div class="my-6 w-full overflow-x-auto rounded-lg border border-hairline shadow-sm"><table class="w-full min-w-full text-left border-collapse"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (isTableLine(line)) {
+      inTable = true;
+      tableLines.push(line);
+    } else {
+      if (inTable) {
+        processedTableLines.push(renderTable(tableLines));
+        tableLines = [];
+        inTable = false;
+      }
+      processedTableLines.push(line);
+    }
+  }
+  if (inTable) {
+    processedTableLines.push(renderTable(tableLines));
+  }
+
+  html = processedTableLines.join("\n");
+
+  // Parse Lists (State Machine)
+  const listLines = html.split("\n");
   let inList = false;
   let listType: "ul" | "ol" | null = null;
-  const processedLines = lines.map((line) => {
+  const processedLines = listLines.map((line) => {
     const trimmed = line.trim();
 
     // Bullet list item
@@ -118,7 +202,7 @@ export function mdToHtml(md: string): string {
   const parsedBlocks = blocks.map((block) => {
     const trimmed = block.trim();
     if (!trimmed) return "";
-    if (/^<(h2|h3|h4|ul|ol|img|li)/i.test(trimmed)) {
+    if (/^<(h2|h3|h4|ul|ol|img|li|div|hr|blockquote)/i.test(trimmed)) {
       return trimmed;
     }
     return `<p class="my-4 text-base leading-relaxed text-ink-soft">${trimmed.replace(/\n/g, "<br />")}</p>`;
