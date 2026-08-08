@@ -1,4 +1,67 @@
+# ─── General crawlers ───────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 
+# ─── Google (Search + AI Overview + AI Mode + Gemini) ───────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ─── OpenAI / ChatGPT ────────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ─── Anthropic / Claude ──────────────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# ─── Perplexity ──────────────────────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ─── Meta / Llama ────────────────────────────────────────────────────────────
+User-agent: FacebookBot
+Allow: /
+
+# ─── Microsoft / Copilot / Bing ──────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# ─── Apple / Applebot (Siri, AI features) ───────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ─── You.com ─────────────────────────────────────────────────────────────────
+User-agent: YouBot
+Allow: /
+
+# ─── Common Crawl (training data for many LLMs) ──────────────────────────────
+User-agent: CCBot
+Allow: /
+
+# ─── Cohere ──────────────────────────────────────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+# ─── Sitemap ─────────────────────────────────────────────────────────────────
 Sitemap: https://www.lokaviainternational.com/sitemap.xml

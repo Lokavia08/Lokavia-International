@@ -1,0 +1,39 @@
+name: Auto-Publish Scheduled Blogs
+
+on:
+  # Runs at 12:30 AM UTC = 6:00 AM IST every day
+  schedule:
+    - cron: '30 0 * * *'
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Check schedule and publish due blogs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install @supabase/supabase-js node-fetch
+
+      - name: Run publish script
+        id: publish
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SITE_URL: https://www.lokaviainternational.com
+        run: node scripts/check-and-publish.js
+
+      - name: Log result
+        run: echo "Pipeline completed at $(date -u)"
