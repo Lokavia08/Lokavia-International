@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
 import { products } from "@/lib/products";
 import heroBotanical from "@/assets/hero-botanical.jpg";
 import { ArrowUpRight, ShieldCheck, Ship, Sprout } from "lucide-react";
@@ -187,7 +186,7 @@ function Index() {
     <SiteShell>
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-background border-b border-hairline pt-20 pb-24 lg:pt-32 lg:pb-32">
-        {/* Botanical Background Image with subtle scrim */}
+        {/* Botanical Background */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBotanical}
@@ -197,77 +196,57 @@ function Index() {
           <div className="absolute inset-0 bg-white/40" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 grid items-end gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ink-soft">
-              <span className="h-px w-8 bg-ink" />
-              Agri-commodity exporter · India
-            </div>
-            <h1 className="mt-8 text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[5.5rem]">
-              <Highlight>Exporting Indian dehydrated</Highlight>
-              <br />
-              <Highlight>ingredients for global buyers.</Highlight>
-            </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
-              <Highlight>
-                Lokavia supplies onion powder, garlic powder, ginger powder, and psyllium husk from India with defined specs, third-party testing support, export documentation, and bulk packaging for manufacturers, distributors, and private-label buyers.
-              </Highlight>
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/quote"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--orange)] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-md hover:brightness-105 active:scale-[0.98]"
-              >
-                Get a Quote <ArrowUpRight size={16} />
-              </Link>
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-all duration-300 hover:text-[var(--orange)] hover:translate-x-1"
-              >
-                Explore products <span aria-hidden>→</span>
-              </Link>
-            </div>
-
-
+        <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-10 flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ink-soft">
+            <span className="h-px w-8 bg-ink" />
+            Agri-commodity exporter · India
+            <span className="h-px w-8 bg-ink" />
           </div>
-          <div className="lg:col-span-4">
-            <dl className="grid grid-cols-2 gap-8 border-t border-hairline pt-8">
-              <div>
-                <dt className="text-xs uppercase tracking-widest text-ink-soft">
-                  Target export markets
-                </dt>
-                <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">
-                  20+
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase tracking-widest text-ink-soft">
-                  SKUs in catalogue
-                </dt>
-                <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">
-                  {products.length}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase tracking-widest text-ink-soft">
-                  MOQ from
-                </dt>
-                <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">
-                  2000 kg
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase tracking-widest text-ink-soft">
-                  Certifications
-                </dt>
-                <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">
-                  FSSAI
-                </dd>
-              </div>
-            </dl>
+          <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[5.5rem]">
+            India's Dehydrated Ingredients.{" "}
+            <span className="accent-word">Export-Ready.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+            Onion powder, garlic powder, ginger powder, and psyllium husk — sourced from India, shipped to 20+ countries with full documentation and third-party testing.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/quote"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--orange)] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-md hover:brightness-105 active:scale-[0.98]"
+            >
+              Get a Quote <ArrowUpRight size={16} />
+            </Link>
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-all duration-300 hover:text-[var(--orange)] hover:translate-x-1"
+            >
+              Explore products <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Stats Strip */}
+      <div className="border-b border-hairline bg-background">
+        <dl className="mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-hairline">
+          <div className="py-8 px-6 text-center">
+            <dt className="text-xs font-semibold uppercase tracking-widest text-ink-soft">Export markets</dt>
+            <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">20+</dd>
+          </div>
+          <div className="py-8 px-6 text-center">
+            <dt className="text-xs font-semibold uppercase tracking-widest text-ink-soft">Products</dt>
+            <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">{products.length}</dd>
+          </div>
+          <div className="py-8 px-6 text-center">
+            <dt className="text-xs font-semibold uppercase tracking-widest text-ink-soft">MOQ from</dt>
+            <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">2,000 kg</dd>
+          </div>
+          <div className="py-8 px-6 text-center">
+            <dt className="text-xs font-semibold uppercase tracking-widest text-ink-soft">Registered</dt>
+            <dd className="mt-2 text-3xl font-bold tracking-tight text-ink">FSSAI</dd>
+          </div>
+        </dl>
+      </div>
 
 
       {/* Products preview with Pinned Scroll Sequence */}
@@ -281,7 +260,7 @@ function Index() {
                   Catalogue
                 </div>
                 <h2 className="mt-3 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-                  <Highlight>What we ship.</Highlight>
+                  <TextHighlight>What we ship.</TextHighlight>
                 </h2>
               </div>
               <Link
@@ -324,9 +303,9 @@ function Index() {
                     {products[displayProductIndex].name}
                   </h2>
                   <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                    <Highlight>
+                    <TextHighlight>
                       {products[displayProductIndex].description}
-                    </Highlight>
+                    </TextHighlight>
                   </p>
                   <div className="mt-8 flex items-center gap-4">
                     <Link
@@ -386,7 +365,7 @@ function Index() {
             <div className="grid gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
-                  About <Highlight>Lokavia</Highlight>
+                  About <TextHighlight>Lokavia</TextHighlight>
                 </div>
                 <h2 className="mt-4 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
                   Built for{" "}
@@ -398,9 +377,9 @@ function Index() {
               </div>
               <div className="lg:col-span-7">
                 <p className={`text-lg leading-relaxed text-ink-soft min-h-[140px] md:min-h-[100px] transition-all duration-200 transform ${isTransitioning ? 'opacity-0 translate-y-1' : 'opacity-100 translate-y-0'}`}>
-                  <Highlight>
+                  <TextHighlight>
                     {variants[displayIndex].text}
-                  </Highlight>
+                  </TextHighlight>
                 </p>
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
                   {[
@@ -425,7 +404,7 @@ function Index() {
       <section className="border-t border-hairline">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 lg:flex-row lg:items-center lg:px-10">
           <h2 className="max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl">
-            <Highlight>Ready to source your next container?</Highlight>
+            <TextHighlight>Ready to source your next container?</TextHighlight>
           </h2>
           <Link
             to="/quote"

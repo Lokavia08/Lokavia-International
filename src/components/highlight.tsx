@@ -7,7 +7,7 @@ interface HighlightProps {
   children: React.ReactNode;
 }
 
-export function Highlight({ children }: HighlightProps) {
+export function TextHighlight({ children }: HighlightProps) {
   if (!children) return null;
   if (typeof children !== "string") {
     return <>{children}</>;

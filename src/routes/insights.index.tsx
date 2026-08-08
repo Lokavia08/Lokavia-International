@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { posts } from "@/lib/insights";
 import { ArrowRight, Search } from "lucide-react";
 import { useState } from "react";
@@ -79,7 +79,7 @@ function InsightsPage() {
             <span className="text-ink font-semibold">Insights</span>
           </div>
           <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            <Highlight>Ideas</Highlight> that <Highlight>Inspire</Highlight>.
+            <TextHighlight>Ideas</TextHighlight> that <TextHighlight>Inspire</TextHighlight>.
           </h1>
         </div>
 

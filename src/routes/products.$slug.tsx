@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import { getProduct, products, type Product } from "@/lib/products";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
@@ -319,20 +319,54 @@ function FaqAccordionItem({ question, answer }: { question: string; answer: stri
 }
 
 function ProductDetails({ p, slug }: { p: any; slug: string }) {
+  const [hoverPos, setHoverPos] = useState<{ x: number; y: number } | null>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoverPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleMouseLeave = () => setHoverPos(null);
+
   return (
     <>
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pt-8 pb-20 lg:px-10 lg:pt-12">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <div className="group overflow-hidden rounded-xl border border-hairline bg-[oklch(0.97_0.003_260)] shadow-md hover:shadow-xl transition-all duration-500">
-              <img
-                src={p.image}
-                alt={p.name}
-                width={1200}
-                height={1200}
-                className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+            {/* Outer wrapper: relative + mouse events, no overflow-hidden */}
+            <div
+              className="relative"
+              onMouseMove={p.introduction ? handleMouseMove : undefined}
+              onMouseLeave={p.introduction ? handleMouseLeave : undefined}
+            >
+              {/* Image: overflow-hidden only for zoom effect */}
+              <div className="group overflow-hidden rounded-xl border border-hairline bg-[oklch(0.97_0.003_260)] shadow-md hover:shadow-xl transition-all duration-500 cursor-crosshair">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  width={1200}
+                  height={1200}
+                  className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+              {/* Card: sibling to image, escapes overflow freely */}
+              {p.introduction && hoverPos && (
+                <div
+                  className="absolute z-20 w-80 rounded-xl bg-white/95 backdrop-blur-sm border border-hairline shadow-2xl p-4 pointer-events-none"
+                  style={{ left: hoverPos.x + 16, top: hoverPos.y + 16 }}
+                >
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--orange)]">
+                    Product Overview
+                  </span>
+                  <h2 className="mt-1.5 text-sm font-bold tracking-tight text-ink">
+                    What is {p.name}?
+                  </h2>
+                  <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">
+                    {p.introduction}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
           <div className="lg:col-span-6">
@@ -343,25 +377,15 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
               {p.name}
             </h1>
             <p className="mt-6 text-xl leading-snug text-ink">
-              <Highlight>{p.tagline}</Highlight>
+              <TextHighlight>{p.tagline}</TextHighlight>
             </p>
             
-            {/* AEO/GEO Opener */}
-            {p.introduction && (
-              <div className="mt-8 border-l-2 border-[var(--orange)] pl-4 py-1">
-                <h2 className="text-xs font-semibold uppercase tracking-widest text-ink">
-                  What is {p.name}?
-                </h2>
-                <p className="mt-2 text-sm text-ink-soft leading-relaxed">
-                  <Highlight>{p.introduction}</Highlight>
-                </p>
-              </div>
-            )}
+
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-ink-soft">
-              <Highlight>
+              <TextHighlight>
                 {`Lokavia supplies ${p.name.toLowerCase()} from India for food manufacturers, ingredient distributors, and private-label brands that need consistent mesh size, low moisture, export packaging, and reliable documentation. Each order can be aligned to buyer specifications, destination-market requirements, and planned production use.`}
-              </Highlight>
+              </TextHighlight>
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8">
@@ -424,10 +448,10 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
                 Technical profile.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   Third-party lab reports are issued with every consignment. Bespoke
                   specifications available on request.
-                </Highlight>
+                </TextHighlight>
               </p>
             </div>
             
@@ -565,7 +589,7 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
                     <Check size={14} strokeWidth={3} />
                   </span>
-                  <span className="leading-normal"><Highlight>{a}</Highlight></span>
+                  <span className="leading-normal"><TextHighlight>{a}</TextHighlight></span>
                 </li>
               ))}
             </ul>
@@ -585,7 +609,7 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--navy)]/5 text-[var(--navy)]">
                       <Check size={14} strokeWidth={3} />
                     </span>
-                    <span className="leading-normal"><Highlight>{pack}</Highlight></span>
+                    <span className="leading-normal"><TextHighlight>{pack}</TextHighlight></span>
                   </li>
                 ))}
               </ul>
@@ -696,6 +720,8 @@ function ProductDetails({ p, slug }: { p: any; slug: string }) {
           </div>
         </section>
       )}
+
+
 
       {/* Product-Specific FAQs Accordion */}
       {p.faqs && p.faqs.length > 0 && (

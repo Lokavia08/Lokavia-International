@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Highlight } from "../components/highlight";
+import { TextHighlight } from "../components/highlight";
 
 function NotFoundComponent() {
   return (
@@ -26,9 +26,9 @@ function NotFoundComponent() {
           Page not found.
         </h1>
         <p className="mt-6 text-base leading-relaxed text-ink-soft">
-          <Highlight>
+          <TextHighlight>
             The page you are looking for does not exist or has been moved. If you are looking for export pricing, spec sheets, or ordering details, please request a quote.
-          </Highlight>
+          </TextHighlight>
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
@@ -60,12 +60,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          <Highlight>This page didn't load</Highlight>
+          <TextHighlight>This page didn't load</TextHighlight>
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          <Highlight>
+          <TextHighlight>
             Something went wrong on our end. You can try refreshing or head back home.
-          </Highlight>
+          </TextHighlight>
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -161,7 +161,8 @@ function RootShell({ children }: { children: ReactNode }) {
       }
     ],
     "sameAs": [
-      "https://www.linkedin.com/company/lokavia"
+      "https://www.linkedin.com/company/lokavia",
+      "https://www.lokaviainternational.com"
     ]
   };
 

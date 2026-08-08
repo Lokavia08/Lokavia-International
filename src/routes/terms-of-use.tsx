@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 
 export const Route = createFileRoute("/terms-of-use")({
   head: () => ({
@@ -44,22 +44,22 @@ function TermsOfUsePage() {
           <div>
             <h2 className="text-lg font-bold text-ink mb-3">1. Acceptable Use</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 This website is provided for legitimate sourcing, trade inquiries, and catalog viewing purposes. 
                 You agree not to engage in any automated scraping of website data, attempt unauthorized vulnerability tests, 
                 or submit false or fraudulent contact details via the Request for Quote (RFQ) interface.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
 
           <div>
             <h2 className="text-lg font-bold text-ink mb-3">2. Intellectual Property</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 All text, custom graphics, logo designs, spec sheets, and catalog details displayed on this website are the intellectual 
                 property of Lokavia International. Reproduction, copying, or redistribution of these assets for commercial purposes 
                 without prior written consent is prohibited.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
 
@@ -75,11 +75,11 @@ function TermsOfUsePage() {
           <div>
             <h2 className="text-lg font-bold text-ink mb-3">4. Limitation of Liability</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 Lokavia International provides this website "as is" and makes no guarantees regarding the continuous availability or 
                 error-free state of the platform. We are not liable for any direct or indirect business disruptions, loss of data, 
                 or shipping delay disputes arising from the use of, or inability to access, this website.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
 

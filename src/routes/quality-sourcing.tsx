@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { ArrowUpRight, CheckCircle2, ShieldAlert } from "lucide-react";
 
 export const Route = createFileRoute("/quality-sourcing")({
@@ -40,14 +40,14 @@ function QualitySourcingPage() {
           Quality-Controlled Sourcing for
         </div>
         <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-          <Highlight>Export-Grade Food Ingredients</Highlight>
+          <TextHighlight>Export-Grade Food Ingredients</TextHighlight>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          <Highlight>
+          <TextHighlight>
             We enforce consistent grades, analytical compliance, and container
             security on every consignment, ensuring raw materials align with your
             manufacturing standards.
-          </Highlight>
+          </TextHighlight>
         </p>
       </section>
 
@@ -65,21 +65,21 @@ function QualitySourcingPage() {
             </div>
             <div className="lg:col-span-8">
               <p className="text-lg leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   Our sourcing strategy relies on direct partnerships with vetted
                   processors and agricultural suppliers in major producing hubs. By
                   working with processing units in Gujarat (onion and psyllium),
                   Madhya Pradesh (garlic), and Kerala/Assam (ginger), we eliminate
                   intermediary handling and secure consistent raw materials.
-                </Highlight>
+                </TextHighlight>
               </p>
               <p className="mt-6 text-base leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   Every supplier partner is selected based on sanitary and phytosanitary
                   infrastructure, grading reliability, and compliance history.
                   This direct oversight allows us to maintain lot traceability
                   from processing to container dispatch.
-                </Highlight>
+                </TextHighlight>
               </p>
             </div>
           </div>
@@ -153,9 +153,9 @@ function QualitySourcingPage() {
             </div>
             <div className="lg:col-span-8">
               <p className="text-lg leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   Agri-commodities are highly sensitive to moisture and ambient conditions. We pack products in multi-wall kraft paper bags with food-grade polyethylene (PE) liners or durable woven bags. This packaging protects against external moisture during transit.
-                </Highlight>
+                </TextHighlight>
               </p>
               <p className="mt-6 text-base leading-relaxed text-ink-soft">
                 Before stuffing, all shipping containers are checked for clean walls, absence of foreign odor, and water-tight seals. Palletization and strapping are executed according to international shipping norms to prevent shifts or damage inside the container.
@@ -180,12 +180,12 @@ function QualitySourcingPage() {
             <div className="lg:col-span-8">
               <div>
                 <h3 className="text-lg font-semibold text-ink">
-                  <Highlight>What quality checks does Lokavia perform before export?</Highlight>
+                  <TextHighlight>What quality checks does Lokavia perform before export?</TextHighlight>
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  <Highlight>
+                  <TextHighlight>
                     Lokavia performs comprehensive pre-export quality checks: we verify moisture levels (≤ 6% for onion/garlic, ≤ 10% for ginger and psyllium) to prevent caking, perform mechanical sieving for mesh size accuracy (60, 80, 100 mesh options), and conduct pesticide residue screening (MRL), heavy metals, and microbiological assay testing at ISO/IEC 17025 accredited laboratories.
-                  </Highlight>
+                  </TextHighlight>
                 </p>
               </div>
             </div>
@@ -198,12 +198,12 @@ function QualitySourcingPage() {
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 lg:flex-row lg:items-center lg:px-10">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl">
-              <Highlight>Ready to initiate your supply?</Highlight>
+              <TextHighlight>Ready to initiate your supply?</TextHighlight>
             </h2>
             <p className="mt-3 text-sm text-ink-soft">
-              <Highlight>
+              <TextHighlight>
                 Request formal specifications or get an FOB/CIF price estimate for your volume.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
           <Link

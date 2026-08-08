@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { ArrowUpRight, ShieldCheck, Ship, Sprout } from "lucide-react";
 import heroExportImg from "@/assets/hero-export.jpg";
 import exportLogisticsImg from "@/assets/export-logistics.png";
@@ -43,17 +43,17 @@ function AboutPage() {
           <div className="mx-auto max-w-4xl relative z-10 flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-ink-soft">
               <span className="h-px w-8 bg-ink" />
-              About <Highlight>Lokavia</Highlight>
+              About <TextHighlight>Lokavia</TextHighlight>
               <span className="h-px w-8 bg-ink" />
             </div>
             <h1 className="mt-8 text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-7xl">
               Sourcing agri-commodities for the global food sector.
             </h1>
             <p className="mt-8 mx-auto max-w-2xl text-lg leading-relaxed text-ink-soft">
-              <Highlight>
+              <TextHighlight>
                 Lokavia supplies dehydrated vegetables, spices, and nutraceutical fibre
                 to food manufacturers and distributors across 20+ countries at industrial scale.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
         </div>
@@ -154,19 +154,19 @@ function AboutPage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center justify-between border-b border-hairline pb-4">
                 <span className="text-sm font-semibold uppercase tracking-widest text-ink-soft">
-                  <Highlight>Our Mission</Highlight>
+                  <TextHighlight>Our Mission</TextHighlight>
                 </span>
                 <span className="text-xs uppercase tracking-widest text-ink-soft font-mono">
                   01
                 </span>
               </div>
               <p className="text-lg leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   We build traceable, dependable origin pipelines for food manufacturers who require
                   consistent grades, clean paperwork, and predictable shipping timelines. By partnering
                   directly with farmers and processors in major agricultural belts, we ensure quality control
                   from procurement to dispatch.
-                </Highlight>
+                </TextHighlight>
               </p>
             </div>
             <div className="lg:col-span-6">
@@ -187,18 +187,18 @@ function AboutPage() {
             <div className="lg:col-span-6 lg:order-2 space-y-6">
               <div className="flex items-center justify-between border-b border-hairline pb-4">
                 <span className="text-sm font-semibold uppercase tracking-widest text-ink-soft">
-                  <Highlight>Our Vision</Highlight>
+                  <TextHighlight>Our Vision</TextHighlight>
                 </span>
                 <span className="text-xs uppercase tracking-widest text-ink-soft font-mono">
                   02
                 </span>
               </div>
               <p className="text-lg leading-relaxed text-ink-soft">
-                <Highlight>
+                <TextHighlight>
                   To expand our export catalogue systematically into additional agricultural commodity categories
                   while maintaining a single, uncompromised standard of compliance, container loading quality, and
                   analytical testing on every consignment.
-                </Highlight>
+                </TextHighlight>
               </p>
             </div>
             <div className="lg:col-span-6 lg:order-1">
@@ -228,10 +228,10 @@ function AboutPage() {
                 Compliance & Registrations
               </h2>
               <p className="mt-4 text-sm text-ink-soft leading-relaxed">
-                <Highlight>
+                <TextHighlight>
                   We operate with absolute transparency. Here is the verified status of our export licensing
                   and food safety certifications.
-                </Highlight>
+                </TextHighlight>
               </p>
             </div>
             <div className="lg:col-span-8 grid gap-4 sm:grid-cols-2">
@@ -299,12 +299,12 @@ function AboutPage() {
               OPERATIONAL STANDARDS
             </span>
             <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-              <Highlight>Why global buyers partner with us.</Highlight>
+              <TextHighlight>Why global buyers partner with us.</TextHighlight>
             </h2>
             <p className="mt-6 text-base text-gray-400 leading-relaxed">
-              <Highlight>
+              <TextHighlight>
                 We design our business around the operational realities of international procurement desks.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
 
@@ -333,7 +333,7 @@ function AboutPage() {
                 <pillar.icon size={28} className="text-[var(--orange)] transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
                 <h3 className="mt-6 text-xl font-semibold">{pillar.title}</h3>
                 <p className="mt-3 text-sm text-gray-400 leading-relaxed">
-                  <Highlight>{pillar.description}</Highlight>
+                  <TextHighlight>{pillar.description}</TextHighlight>
                 </p>
               </div>
             ))}
@@ -373,8 +373,8 @@ function AboutPage() {
                 }
               ].map((faq) => (
                 <div key={faq.q} className="border-b border-hairline pb-8 last:border-0 last:pb-0">
-                  <h3 className="text-lg font-semibold text-ink"><Highlight>{faq.q}</Highlight></h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft"><Highlight>{faq.a}</Highlight></p>
+                  <h3 className="text-lg font-semibold text-ink"><TextHighlight>{faq.q}</TextHighlight></h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft"><TextHighlight>{faq.a}</TextHighlight></p>
                 </div>
               ))}
             </div>
@@ -386,7 +386,7 @@ function AboutPage() {
       <section className="border-t border-hairline">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 lg:flex-row lg:items-center lg:px-10">
           <h2 className="max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl">
-            <Highlight>Ready to source your next container?</Highlight>
+            <TextHighlight>Ready to source your next container?</TextHighlight>
           </h2>
           <Link
             to="/quote"

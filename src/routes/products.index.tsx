@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import { products } from "@/lib/products";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/products/")({
@@ -42,12 +42,12 @@ function ProductsIndex() {
           Catalogue · 2026
         </div>
          <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-          <Highlight>Bulk Dehydrated Ingredients from India</Highlight>
+          <TextHighlight>Bulk Dehydrated Ingredients from India</TextHighlight>
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          <Highlight>
+          <TextHighlight>
             Explore Lokavia's range of premium dehydrated food ingredients for food manufacturing, ingredient distribution, and private-label applications.
-          </Highlight>
+          </TextHighlight>
         </p>
       </section>
 
@@ -87,7 +87,7 @@ function ProductsIndex() {
                     {p.name}
                   </h2>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
-                    <Highlight>{p.description}</Highlight>
+                    <TextHighlight>{p.description}</TextHighlight>
                   </p>
                 </div>
                 <div className="md:col-span-3 flex flex-col justify-between h-full py-2">
@@ -114,13 +114,13 @@ function ProductsIndex() {
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 lg:flex-row lg:items-center lg:px-10">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl">
-              <Highlight>Need a category we don't list yet?</Highlight>
+              <TextHighlight>Need a category we don't list yet?</TextHighlight>
             </h2>
             <p className="mt-4 text-lg text-ink-soft">
-              <Highlight>
+              <TextHighlight>
                 We qualify new commodities on request. Tell us what you import and at
                 what volume.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
           <Link

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
 
@@ -290,9 +290,9 @@ function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-soft">
-            <Highlight>
+            <TextHighlight>
               Find answers regarding our dehydrated ingredients, quality certifications, customization capabilities, and global shipping policies.
-            </Highlight>
+            </TextHighlight>
           </p>
 
           {/* Search bar */}
@@ -349,7 +349,7 @@ function FAQPage() {
                               onClick={() => toggleItem(itemKey)}
                               className="w-full flex items-center justify-between text-left font-semibold text-ink hover:text-[var(--orange)] transition-colors py-2"
                             >
-                              <span><Highlight>{item.q}</Highlight></span>
+                              <span><TextHighlight>{item.q}</TextHighlight></span>
                               <ChevronDown
                                 size={18}
                                 className={`text-ink-soft transition-transform duration-300 ${
@@ -363,7 +363,7 @@ function FAQPage() {
                               }`}
                             >
                               <div className="text-sm leading-relaxed text-ink-soft">
-                                <Highlight>
+                                <TextHighlight>
                                   {Array.isArray(item.a) ? (
                                     <ul className="list-disc list-inside space-y-1 pl-2">
                                       {item.a.map((line, lIdx) => (
@@ -373,7 +373,7 @@ function FAQPage() {
                                   ) : (
                                     item.a
                                   )}
-                                </Highlight>
+                                </TextHighlight>
                               </div>
                             </div>
                           </div>

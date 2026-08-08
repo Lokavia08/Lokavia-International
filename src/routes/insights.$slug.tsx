@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import { getPost, mdToHtml, posts } from "@/lib/insights";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/insights/$slug")({
@@ -84,7 +84,7 @@ function PostPage() {
             {post.title}
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft italic">
-            <Highlight>{post.excerpt}</Highlight>
+            <TextHighlight>{post.excerpt}</TextHighlight>
           </p>
         </header>
 

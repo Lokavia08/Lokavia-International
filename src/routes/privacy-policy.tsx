@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { Highlight } from "@/components/highlight";
+import { TextHighlight } from "@/components/highlight";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -44,10 +44,10 @@ function PrivacyPolicyPage() {
           <div>
             <h2 className="text-lg font-bold text-ink mb-3">1. Data Collected via RFQ Form</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 We collect personal and professional information directly submitted through our Request for Quote (RFQ) form. 
                 This information includes:
-              </Highlight>
+              </TextHighlight>
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1 pl-4">
               <li>Full name and company</li>
@@ -72,11 +72,11 @@ function PrivacyPolicyPage() {
           <div>
             <h2 className="text-lg font-bold text-ink mb-3">3. Third-Party Sharing</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 We do not sell, rent, trade, or share your contact details or procurement records with outside marketers or third parties. 
                 Data is shared internally with the Lokavia export desk and, where required by law, with regulatory and customs authorities 
                 to facilitate international trade compliance.
-              </Highlight>
+              </TextHighlight>
             </p>
           </div>
 
@@ -90,13 +90,13 @@ function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-ink mb-3">5. <Highlight>Your</Highlight> Rights & Contact Method</h2>
+            <h2 className="text-lg font-bold text-ink mb-3">5. <TextHighlight>Your</TextHighlight> Rights & Contact Method</h2>
             <p>
-              <Highlight>
+              <TextHighlight>
                 Under relevant privacy laws, you have the right to request access to the information we hold about your business, 
                 request corrections, or request complete deletion of your lead data from our records. For any such requests or 
                 privacy-related questions, contact us at:
-              </Highlight>
+              </TextHighlight>
             </p>
             <p className="mt-2 font-semibold text-ink">
               info@lokaviainternational.com
