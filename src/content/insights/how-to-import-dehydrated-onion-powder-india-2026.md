@@ -2,7 +2,7 @@
 title: "How to Import Dehydrated Onion Powder from India: The Complete Buyer's Guide (2026)"
 date: "2026-08-3"
 excerpt: "India supplies 60%+ of global dehydrated onion. This guide covers specs, certifications, documentation, MOQ, and how to place your first order."
-image: "/blog/onion-import-guide.jpg"
+image: "/blog/blog-onion-import.jpg"
 ---
 
 **TL;DR:** India is the world's leading supplier of dehydrated onion powder. To import, you need a supplier with FSSAI and APEDA registration, a valid COA, phytosanitary certificate, and clarity on Incoterms. MOQ starts at 2,000 kg. FOB pricing ranges from USD $1.30–$2.10/kg depending on grade and volume.
@@ -23,6 +23,8 @@ India produces over 1.5 million metric tonnes of onions annually. Gujarat — sp
 ## What Specifications Should You Specify in Your Purchase Order?
 
 Before requesting a quote, confirm these parameters with your supplier:
+
+![Dehydrated Onion Powder Mesh & Grades Specification Comparison](/blog/blog-onion-specs.jpg)
 
 | Parameter | Standard Range | Notes |
 |---|---|---|

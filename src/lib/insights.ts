@@ -52,7 +52,7 @@ export function mdToHtml(md: string): string {
   html = html.replace(/_(.*?)_/g, "<em>$1</em>");
 
   // Images
-  html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="my-6 rounded-xl max-w-full border border-hairline shadow-md mx-auto" />');
+  html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8 text-center"><img src="$2" alt="$1" class="rounded-xl w-full max-w-xl max-h-[260px] sm:max-h-[300px] object-cover border border-hairline shadow-sm mx-auto" /><figcaption class="mt-2.5 text-xs text-ink-soft italic">$1</figcaption></figure>');
 
   // Links
   html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[var(--orange)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">$1</a>');
@@ -202,7 +202,7 @@ export function mdToHtml(md: string): string {
   const parsedBlocks = blocks.map((block) => {
     const trimmed = block.trim();
     if (!trimmed) return "";
-    if (/^<(h2|h3|h4|ul|ol|img|li|div|hr|blockquote)/i.test(trimmed)) {
+    if (/^<(h2|h3|h4|ul|ol|img|li|div|hr|blockquote|figure)/i.test(trimmed)) {
       return trimmed;
     }
     return `<p class="my-4 text-base leading-relaxed text-ink-soft">${trimmed.replace(/\n/g, "<br />")}</p>`;

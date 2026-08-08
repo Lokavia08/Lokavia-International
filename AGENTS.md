@@ -8,6 +8,10 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 
+## Git Workflow Rule
+- **Keep all code changes local only.**
+- **Do NOT run `git commit` or `git push` unless explicitly requested by the user.**
+
 
 ## SEO Target Clusters & Page Mappings
 

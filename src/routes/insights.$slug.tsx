@@ -20,6 +20,71 @@ export const Route = createFileRoute("/insights/$slug")({
       };
     }
     const { post } = loaderData;
+
+    // Extract FAQs for FAQPage Schema
+    const faqRegex = /\*\*Q:\s*(.*?)\*\*\s*\n+([^#\n*]+)/g;
+    const faqs: { question: string; answer: string }[] = [];
+    let match;
+    while ((match = faqRegex.exec(post.body)) !== null) {
+      faqs.push({
+        question: match[1].trim(),
+        answer: match[2].trim().replace(/\n/g, " "),
+      });
+    }
+
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: post.excerpt,
+      image: post.image ? `https://www.lokaviainternational.com${post.image}` : undefined,
+      datePublished: post.date,
+      author: {
+        "@type": "Organization",
+        name: "Lokavia International",
+        url: "https://www.lokaviainternational.com",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Lokavia International",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.lokaviainternational.com/logo-light.png",
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.lokaviainternational.com/insights/${post.slug}`,
+      },
+    };
+
+    const faqSchema = faqs.length > 0 ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    } : null;
+
+    const scripts: any[] = [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(articleSchema),
+      },
+    ];
+
+    if (faqSchema) {
+      scripts.push({
+        type: "application/ld+json",
+        children: JSON.stringify(faqSchema),
+      });
+    }
+
     return {
       meta: [
         { title: `${post.title} | Lokavia Insights` },
@@ -34,6 +99,7 @@ export const Route = createFileRoute("/insights/$slug")({
       links: [
         { rel: "canonical", href: `https://www.lokaviainternational.com/insights/${post.slug}` },
       ],
+      scripts,
     };
   },
   notFoundComponent: () => (
@@ -93,11 +159,11 @@ function PostPage() {
 
             {/* Cover Image */}
             {post.image && (
-              <div className="overflow-hidden rounded-2xl border border-hairline shadow-sm mb-10 bg-[oklch(0.97_0.003_260)] aspect-video">
+              <div className="overflow-hidden rounded-2xl border border-hairline shadow-sm mb-10 bg-[oklch(0.97_0.003_260)] h-48 sm:h-64 md:h-72 w-full">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             )}
