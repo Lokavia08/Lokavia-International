@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
+import { TextHighlight } from "@/components/highlight";
 import { products } from "@/lib/products";
 import heroBotanical from "@/assets/hero-botanical.jpg";
 import { ArrowUpRight, ShieldCheck, Ship, Sprout } from "lucide-react";
