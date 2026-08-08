@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import { getPost, mdToHtml, posts } from "@/lib/insights";
 import { TextHighlight } from "@/components/highlight";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
@@ -105,28 +105,63 @@ function PostPage() {
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
 
-        {/* Read More Section */}
+        {/* Suggested Articles Section */}
         {otherPosts.length > 0 && (
           <footer className="mt-20 border-t border-hairline pt-12">
-            <h3 className="text-xl font-extrabold text-ink">Read more insights</h3>
-            <div className="grid gap-6 sm:grid-cols-2 mt-6">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--orange)]">
+                  Continue Reading
+                </span>
+                <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl mt-1">
+                  Suggested Articles
+                </h3>
+              </div>
+              <Link
+                to="/insights"
+                className="hidden text-sm font-semibold text-ink hover:text-[var(--orange)] sm:inline-flex items-center gap-1 transition-colors"
+              >
+                View all insights <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
               {otherPosts.map((op) => (
                 <Link
                   key={op.slug}
                   to="/insights/$slug"
                   params={{ slug: op.slug }}
-                  className="group block border border-hairline p-5 rounded-xl bg-white shadow-sm hover:shadow-md hover:border-[var(--orange)]/30 transition-all duration-300"
+                  className="group flex flex-col overflow-hidden border border-hairline rounded-2xl bg-white shadow-sm hover:shadow-md hover:border-[var(--orange)]/40 transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  <span className="text-[10px] font-bold text-[var(--orange)] uppercase">
-                    {new Date(op.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                  <h4 className="font-extrabold text-ink mt-1 group-hover:text-[var(--orange)] transition-colors duration-300 leading-snug">
-                    {op.title}
-                  </h4>
+                  {op.image && (
+                    <div className="aspect-[16/9] w-full overflow-hidden bg-[oklch(0.97_0.003_260)]">
+                      <img
+                        src={op.image}
+                        alt={op.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-6">
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-[var(--orange)]">
+                      {new Date(op.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </span>
+                    <h4 className="mt-2 text-lg font-bold text-ink group-hover:text-[var(--orange)] transition-colors leading-snug line-clamp-2">
+                      {op.title}
+                    </h4>
+                    {op.excerpt && (
+                      <p className="mt-2 text-xs leading-relaxed text-ink-soft line-clamp-2">
+                        {op.excerpt}
+                      </p>
+                    )}
+                    <div className="mt-4 pt-4 border-t border-hairline/60 flex items-center gap-1 text-xs font-semibold text-ink group-hover:text-[var(--orange)] transition-colors">
+                      Read article <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

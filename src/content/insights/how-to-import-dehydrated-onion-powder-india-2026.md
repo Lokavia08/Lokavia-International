@@ -1,6 +1,6 @@
 ---
 title: "How to Import Dehydrated Onion Powder from India: The Complete Buyer's Guide (2026)"
-date: "2026-09-01"
+date: "2026-08-3"
 excerpt: "India supplies 60%+ of global dehydrated onion. This guide covers specs, certifications, documentation, MOQ, and how to place your first order."
 image: "/blog/onion-import-guide.jpg"
 ---
