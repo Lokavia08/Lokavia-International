@@ -252,15 +252,15 @@ function Index() {
 
       {/* Products preview with Pinned Scroll Sequence */}
       <div ref={productsTrackRef} className="relative h-[220vh] w-full border-t border-hairline">
-        <div className="sticky top-0 h-[100dvh] w-full flex items-center overflow-hidden">
-          <section className="mx-auto w-full max-w-7xl px-6 lg:px-10 py-8 lg:py-0">
+        <div className="sticky top-0 h-[100dvh] w-full flex items-start lg:items-center overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+          <section className="mx-auto w-full max-w-7xl px-6 lg:px-10 py-4 lg:py-0">
             {/* Section Header */}
-            <div className="flex items-end justify-between border-b border-hairline pb-6 mb-12">
+            <div className="flex items-end justify-between border-b border-hairline pb-4 mb-6 sm:pb-6 sm:mb-12">
               <div>
                 <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
                   Catalogue
                 </div>
-                <h2 className="mt-3 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+                <h2 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
                   <TextHighlight>What we ship.</TextHighlight>
                 </h2>
               </div>
@@ -272,14 +272,14 @@ function Index() {
               </Link>
             </div>
 
-            <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+            <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-16">
 
               {/* Left Column: Image */}
               <div className="flex justify-center">
                 <Link
                   to="/products/$slug"
                   params={{ slug: products[displayProductIndex].slug }}
-                  className="group block w-full max-w-[480px] aspect-square overflow-hidden rounded-lg bg-[oklch(0.97_0.003_260)] shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                  className="group block w-full max-w-[320px] sm:max-w-[480px] aspect-square overflow-hidden rounded-lg bg-[oklch(0.97_0.003_260)] shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                 >
                   <img
                     src={products[displayProductIndex].image}
@@ -291,7 +291,7 @@ function Index() {
               </div>
 
               {/* Right Column: Copy content */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div className={`transition-all duration-200 transform ${isProductTransitioning ? "opacity-0 -translate-y-1" : "opacity-100 translate-y-0"
                   }`}>
                   <span className="text-xs font-semibold uppercase tracking-widest text-ink-soft block">
@@ -300,15 +300,15 @@ function Index() {
                   <div className="mt-1 text-xs text-ink-soft">
                     {endUses[displayProductIndex]}
                   </div>
-                  <h2 className="mt-2 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+                  <h2 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
                     {products[displayProductIndex].name}
                   </h2>
-                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                  <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-ink-soft">
                     <TextHighlight>
                       {products[displayProductIndex].description}
                     </TextHighlight>
                   </p>
-                  <div className="mt-8 flex items-center gap-4">
+                  <div className="mt-4 sm:mt-8 flex items-center gap-4">
                     <Link
                       to="/products/$slug"
                       params={{ slug: products[displayProductIndex].slug }}
@@ -361,14 +361,14 @@ function Index() {
 
       {/* Trajectory / trust with Pinned Scroll Sequence */}
       <div ref={trackRef} className="relative h-[250vh] w-full">
-        <div className="sticky top-0 h-[100dvh] w-full flex items-center overflow-hidden">
-          <section className="mx-auto w-full max-w-7xl px-6 lg:px-10 py-8 lg:py-0">
-            <div className="grid gap-16 lg:grid-cols-12">
+        <div className="sticky top-0 h-[100dvh] w-full flex items-start lg:items-center overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+          <section className="mx-auto w-full max-w-7xl px-6 lg:px-10 py-4 lg:py-0">
+            <div className="grid gap-6 sm:gap-10 lg:gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <div className="text-xs font-semibold uppercase tracking-widest text-ink-soft">
                   About <TextHighlight>Lokavia</TextHighlight>
                 </div>
-                <h2 className="mt-4 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+                <h2 className="mt-2 sm:mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
                   Built for{" "}
                   <span className={`inline-block transition-all duration-200 transform ${isTransitioning ? 'opacity-0 -translate-y-1' : 'opacity-100 translate-y-0'} accent-word`}>
                     {variants[displayIndex].word}
@@ -377,21 +377,21 @@ function Index() {
                 </h2>
               </div>
               <div className="lg:col-span-7">
-                <p className={`text-lg leading-relaxed text-ink-soft min-h-[140px] md:min-h-[100px] transition-all duration-200 transform ${isTransitioning ? 'opacity-0 translate-y-1' : 'opacity-100 translate-y-0'}`}>
+                <p className={`text-base sm:text-lg leading-relaxed text-ink-soft min-h-[120px] md:min-h-[100px] transition-all duration-200 transform ${isTransitioning ? 'opacity-0 translate-y-1' : 'opacity-100 translate-y-0'}`}>
                   <TextHighlight>
                     {variants[displayIndex].text}
                   </TextHighlight>
                 </p>
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                <div className="mt-6 sm:mt-10 grid gap-4 grid-cols-2 sm:grid-cols-2">
                   {[
                     ["FSSAI", "Licensed food business"],
                     ["APEDA", "Registered exporter"],
                     ["ISO 22000", "Planned pipeline"],
                     ["HACCP", "Planned pipeline"],
                   ].map(([k, v]) => (
-                    <div key={k} className="border-t border-hairline pt-4">
-                      <div className="text-lg font-semibold text-ink">{k}</div>
-                      <div className="mt-1 text-sm text-ink-soft">{v}</div>
+                    <div key={k} className="border-t border-hairline pt-3 sm:pt-4">
+                      <div className="text-base sm:text-lg font-semibold text-ink">{k}</div>
+                      <div className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-ink-soft">{v}</div>
                     </div>
                   ))}
                 </div>

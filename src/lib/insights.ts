@@ -54,8 +54,12 @@ export function mdToHtml(md: string): string {
   // Images
   html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8 text-center"><img src="$2" alt="$1" class="rounded-xl w-full max-w-xl max-h-[260px] sm:max-h-[300px] object-cover border border-hairline shadow-sm mx-auto" /><figcaption class="mt-2.5 text-xs text-ink-soft italic">$1</figcaption></figure>');
 
-  // Links
-  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[var(--orange)] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">$1</a>');
+  // Links (Internal vs External)
+  html = html.replace(/\[(.*?)\]\((.*?)\)/g, (_, text, url) => {
+    const isInternal = url.startsWith("/") || url.includes("lokaviainternational.com");
+    const targetAttr = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+    return `<a href="${url}" class="text-[var(--orange)] hover:underline font-semibold"${targetAttr}>${text}</a>`;
+  });
 
   // Blockquotes
   html = html.replace(/^>\s*(.*$)/gim, '<blockquote class="my-6 border-l-4 border-[var(--orange)] bg-orange-50/20 py-3 pl-4 pr-3 text-ink-soft italic rounded-r-lg">$1</blockquote>');
@@ -202,13 +206,27 @@ export function mdToHtml(md: string): string {
   const parsedBlocks = blocks.map((block) => {
     const trimmed = block.trim();
     if (!trimmed) return "";
-    if (/^<(h2|h3|h4|ul|ol|img|li|div|hr|blockquote|figure)/i.test(trimmed)) {
+    if (/^<(h2|h3|h4|ul|ol|img|li|div|hr|blockquote|figure|table)/i.test(trimmed)) {
       return trimmed;
     }
     return `<p class="my-4 text-base leading-relaxed text-ink-soft">${trimmed.replace(/\n/g, "<br />")}</p>`;
   });
 
-  return parsedBlocks.filter((b) => b !== "").join("\n");
+  const fullHtml = parsedBlocks.filter((b) => b !== "").join("\n");
+
+  const HIGHLIGHT_WORDS = ["we", "us", "you", "our", "your", "buyers", "suppliers", "lokavia", "manufacturers", "distributors"];
+  const highlightRegex = new RegExp(`(<[^>]+>)|(\\b(?:${HIGHLIGHT_WORDS.join("|")})\\b[.,!?;]?)`, "gi");
+
+  return fullHtml.replace(highlightRegex, (match, tag, word) => {
+    if (tag) return tag;
+    if (word) {
+      const cleanWord = word.replace(/[.,!?;]+$/, "");
+      if (HIGHLIGHT_WORDS.includes(cleanWord.toLowerCase())) {
+        return `<span class="accent-word">${word}</span>`;
+      }
+    }
+    return match;
+  });
 }
 
 // Dynamically load all blog posts from src/content/insights

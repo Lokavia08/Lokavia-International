@@ -150,7 +150,7 @@ function PostPage() {
                 })}
               </span>
               <h1 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-ink sm:leading-tight">
-                {post.title}
+                <TextHighlight>{post.title}</TextHighlight>
               </h1>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-ink-soft italic">
                 <TextHighlight>{post.excerpt}</TextHighlight>

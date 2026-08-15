@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-ink text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link
               to="/"
@@ -76,17 +76,44 @@ export function SiteFooter() {
           </div>
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+              Products
+            </div>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <Link to="/products/$slug" params={{ slug: "onion-powder" }} className="text-gray-300 hover:text-white transition-colors">
+                  Onion Powder
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/$slug" params={{ slug: "garlic-powder" }} className="text-gray-300 hover:text-white transition-colors">
+                  Garlic Powder
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/$slug" params={{ slug: "ginger-powder" }} className="text-gray-300 hover:text-white transition-colors">
+                  Ginger Powder
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/$slug" params={{ slug: "psyllium-husk" }} className="text-gray-300 hover:text-white transition-colors">
+                  Psyllium Husk
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="text-[var(--orange)] hover:underline font-medium text-xs flex items-center gap-1 pt-1">
+                  All Products →
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-gray-400">
               Explore
             </div>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
                   Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-300 hover:text-white transition-colors">
-                  Products
                 </Link>
               </li>
               <li>

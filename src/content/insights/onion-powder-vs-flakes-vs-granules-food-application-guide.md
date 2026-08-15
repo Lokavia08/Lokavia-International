@@ -95,17 +95,13 @@ Specifying exact mesh sizes and moisture thresholds in your purchase order is vi
 - **Pyruvic Acid & Pungency (≥30 μmol/g):** Pyruvate concentration measures active pungent flavor strength. High-pungency white onions from Gujarat, India provide maximum flavor potency per kilogram.
 - **Sulphur Dioxide (SO₂):** Standard grades contain SO₂ for color preservation (≤500 ppm or ≤2000 ppm per regional regulation). European food buyers frequently specify **SO₂-free (low-sulfite)** onion powder for clean-label compliance.
 
-For detailed export documentation and quality standards, review our comprehensive [Guide to Importing Dehydrated Onion Powder from India](https://www.lokaviainternational.com/insights/how-to-import-dehydrated-onion-powder-india-2026).
+For detailed export documentation and quality standards, review our comprehensive [Guide to Importing Dehydrated Onion Powder from India](/insights/how-to-import-dehydrated-onion-powder-india-2026) or explore our [Onion Powder product catalog](/products/onion-powder).
 
 ---
 
 ## How Do Handling, Bulk Density, and Storage Costs Compare Across Forms?
 
-Bulk density directly dictates your shipping, storage, and container utilization efficiency:
-
-- **Container Fill Rate:** Granules (~0.65 g/mL) pack tighter into 25 kg bags and sea containers, allowing up to 20,000 kg per 20-ft FCL. Flakes (~0.35 g/mL) require greater volume, filling a 20-ft container at only 12,000–14,000 kg.
-- **Packaging Integrity:** Powder must be packed in double-layer polyethylene liners inside corrugated boxes or multi-wall paper sacks to prevent ambient humidity absorption.
-- **Shelf Life:** Under cool (<20°C), dry (<60% RH) storage, sealed onion powder, granules, and flakes maintain a stable shelf life of 24 months.
+Bulk density directly dictates your shipping, storage, and container utilization efficiency. Learn more on our [Quality & Sourcing page](/quality-sourcing).
 
 ---
 
@@ -122,25 +118,18 @@ To select the optimal dehydrated onion format for your production facility, answ
 ## Frequently Asked Questions
 
 **Q: Can onion granules be used as a direct 1:1 weight substitute for onion powder?**
-Yes, in terms of dry flavor contribution, 1 gram of onion powder equals 1 gram of onion granules. However, granules dissolve slower in cold liquids and have a higher bulk density, so volumetric measurements (cups/tablespoons) will differ.
+Yes, in terms of dry flavor contribution, 1 gram of onion powder equals 1 gram of onion granules.
 
 **Q: What is the difference between white, yellow, and red dehydrated onion forms?**
-White dehydrated onion provides a clean, sweet-pungent flavor without color tinting, ideal for light sauces and creams. Yellow onion has a stronger, caramelized flavor profile. Red onion retains subtle reddish-purple specks, preferred for specialty salsas and artisan rubs.
+White dehydrated onion provides a clean, sweet-pungent flavor without color tinting, ideal for light sauces and creams.
 
-**Q: Why does onion powder lump in storage and how can food factories prevent it?**
-Onion powder is highly hygroscopic due to its low molecular weight sugars. Factories prevent lumping by storing unopened bags below 20°C and 60% relative humidity, adding approved anti-caking agents (like silicon dioxide at ≤2.0%), or switching to onion granules for automated dosing lines.
-
-**Q: What packaging options are available for bulk export orders from Lokavia International?**
-Lokavia supplies export-grade dehydrated onion powder, granules, and flakes in standard 20 kg / 25 kg multi-wall paper bags with heavy-duty food-grade inner poly liners, aluminum foil barrier bags, or custom cartoon boxes packed on heat-treated ISPM-15 wooden pallets.
+**Q: What packaging options are available for bulk export orders from Lokavia?**
+[Lokavia](/about) supplies export-grade dehydrated onion powder, granules, and flakes packed on heat-treated ISPM-15 wooden pallets. See our [frequently asked questions](/faq).
 
 ---
 
 ## Need Custom Specifications or Bulk Export Pricing?
 
-Whether you require SO₂-free white onion powder, 20–40 mesh granules, or premium toasted onion flakes, Lokavia International provides batch-certified dehydrated onion ingredients with full COA, FSSAI, APEDA, and ISO 22000 compliance.
+Whether you require SO₂-free white onion powder or custom mesh grades, Lokavia provides batch-certified ingredients across our [entire products portfolio](/products).
 
-- **Minimum Order Quantity:** 2,000 kg (Trial orders available for qualified manufacturers)
-- **Container Loads:** 20-ft FCL (14,000–20,000 kg depending on mesh form)
-- **Samples:** Free 200g–500g lab samples dispatched worldwide via express courier
-
-[Request a Customized Bulk Quote & COA Sample Sheet](https://www.lokaviainternational.com/quote)
+[Request a Customized Bulk Quote & COA Sample Sheet](/quote)
