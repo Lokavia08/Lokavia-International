@@ -229,13 +229,18 @@ export function mdToHtml(md: string): string {
   });
 }
 
+import { supabase } from "./supabase";
+
 // Dynamically load all blog posts from src/content/insights
 const modules = import.meta.glob("/src/content/insights/*.md", {
   eager: true,
   query: "?raw",
 }) as Record<string, { default: string }>;
 
-export const posts: Post[] = Object.entries(modules)
+// ISO YYYY-MM-DD date string helper
+const getTodayStr = () => new Date().toISOString().split("T")[0];
+
+export const allPosts: Post[] = Object.entries(modules)
   .map(([filepath, module]) => {
     const rawContent = module.default;
     const slug = filepath.split("/").pop()?.replace(".md", "") || "";
@@ -248,7 +253,38 @@ export const posts: Post[] = Object.entries(modules)
       image: frontmatter.image || undefined,
       body,
     };
-  })
+  });
+
+// Filter published posts (only show articles whose scheduled publish_date has arrived)
+export const posts: Post[] = allPosts
+  .filter((post) => post.date && post.date <= getTodayStr())
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
+export const getPost = (slug: string) => {
+  const post = allPosts.find((p) => p.slug === slug);
+  if (!post) return undefined;
+  const todayStr = getTodayStr();
+  if (import.meta.env.PROD && post.date > todayStr) {
+    return undefined;
+  }
+  return post;
+};
+
+// Fetch live published blog schedule directly from Supabase (if credentials configured)
+export async function fetchPublishedPostsFromSupabase() {
+  if (!supabase) return null;
+  const todayStr = getTodayStr();
+  const { data, error } = await supabase
+    .from("blog_schedule")
+    .select("slug, title, publish_date, published")
+    .eq("published", true)
+    .lte("publish_date", todayStr)
+    .order("publish_date", { ascending: false });
+
+  if (error) {
+    console.error("Supabase query error:", error);
+    return null;
+  }
+  return data;
+}
+

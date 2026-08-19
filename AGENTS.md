@@ -24,3 +24,10 @@
 | Quality/compliance | MRL testing, COA, phytosanitary certificate, export documentation |
 | Buyer education | MOQ, Incoterms, private label, samples, packaging, shelf life |
 
+## Blog Writing & Scheduling Rule
+- **Sequential Schedule Enforcement:** When requested to write a blog post, always check the `blog_schedule` table (or project schedule queue) for the **next chronological post** by `publish_date` (the earliest post with `published = false`).
+- **No Random Selection:** Do NOT pick random topics out of sequence. Always write the exact next due article according to the release date schedule.
+- **Minimalist Image Design:** All generated blog cover images must be ultra-minimalist, clean studio photography with generous negative space, neutral backgrounds (light grey/plaster/off-white), soft shadows, and clean single-subject compositions. Avoid cluttered, busy, or overly crowded visuals.
+
+
+
