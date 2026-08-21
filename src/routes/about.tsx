@@ -260,10 +260,10 @@ function AboutPage() {
                 <p className="mt-1 text-xs text-ink-soft">Food safety and standards licensing for food business operations.</p>
               </div>
 
-              {/* In Progress Registrations */}
+              {/* Active Registrations */}
               <div className="border border-hairline bg-background rounded p-6 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-md">
-                <span className="inline-block rounded bg-[oklch(0.94_0.03_70)] text-[oklch(0.5_0.1_50)] px-2 py-0.5 text-xs font-semibold tracking-wider uppercase mb-3">
-                  In Progress
+                <span className="inline-block rounded bg-[oklch(0.92_0.04_140)] text-[oklch(0.35_0.08_140)] px-2 py-0.5 text-xs font-semibold tracking-wider uppercase mb-3">
+                  Active
                 </span>
                 <h3 className="text-lg font-bold text-ink">APEDA Registration</h3>
                 <p className="mt-1 text-xs text-ink-soft">Agricultural and Processed Food Products Export Development Authority.</p>
@@ -369,7 +369,7 @@ function AboutPage() {
                 },
                 {
                   q: "What certifications does Lokavia hold?",
-                  a: "Lokavia currently holds active Import Export Code (IEC), GST, and FSSAI registrations. Additional export registrations like APEDA are in progress, while ISO 22000, HACCP, and US FDA facility registrations are in our planned pipeline."
+                  a: "Lokavia currently holds active Import Export Code (IEC), GST, FSSAI, and APEDA registrations. ISO 22000, HACCP, and US FDA facility registrations are in our planned pipeline."
                 }
               ].map((faq) => (
                 <div key={faq.q} className="border-b border-hairline pb-8 last:border-0 last:pb-0">
