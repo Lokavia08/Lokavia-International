@@ -46,7 +46,7 @@ function FAQPage() {
       questions: [
         {
           q: "What products does Lokavia export?",
-          a: "Lokavia exports dehydrated onion powder, dehydrated garlic powder, dehydrated ginger powder, and psyllium husk for food manufacturers, importers, distributors, and private-label brands."
+          a: "Lokavia exports dehydrated onion powder, dehydrated garlic powder, dehydrated ginger powder, whole chillies, and psyllium husk for food manufacturers, importers, distributors, and private-label brands."
         },
         {
           q: "What industries use your products?",
@@ -67,6 +67,18 @@ function FAQPage() {
         {
           q: "What is the shelf life of your products?",
           a: "The standard shelf life is 18 months when stored under recommended conditions."
+        },
+        {
+          q: "Where are your products sourced?",
+          a: "Our products are sourced from key agricultural hubs across India, including Gujarat (onion, psyllium), Madhya Pradesh (garlic), Kerala & Assam (ginger), and Andhra Pradesh & Telangana (chillies)."
+        },
+        {
+          q: "Can you supply organic products?",
+          a: "Organic options may be available depending on the product and order volume. Please contact us for details."
+        },
+        {
+          q: "Do you offer samples for evaluation?",
+          a: "Yes, sample shipments are available for testing and quality evaluation prior to commercial orders."
         },
         {
           q: "How should the products be stored?",
@@ -166,6 +178,7 @@ function FAQPage() {
             "Dehydrated Onion Powder — 071220",
             "Dehydrated Garlic Powder — 071290",
             "Dehydrated Ginger Powder — 091012",
+            "Whole Chillies (With stem / Stemless) — 090421",
             "Psyllium Husk — 121190"
           ]
         },

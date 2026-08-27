@@ -98,13 +98,13 @@ function AboutPage() {
             {/* Row 1 - Darkest background */}
             <div className="bg-ink text-white flex flex-col sm:flex-row sm:items-center justify-between p-8 md:p-10 gap-6">
               <div className="flex items-center gap-6 min-w-[160px]">
-                <span className="text-5xl md:text-6xl font-bold tracking-tight text-[var(--orange)]">4</span>
+                <span className="text-5xl md:text-6xl font-bold tracking-tight text-[var(--orange)]">5</span>
                 <div className="w-px h-14 bg-white/20 hidden sm:block" />
               </div>
               <div className="flex-1 text-base md:text-lg text-gray-300">
                 Flagship SKU Commodities
                 <br />
-                <span className="text-sm text-gray-400">Dehydrated Onion, Garlic, Ginger, & Psyllium Husk</span>
+                <span className="text-sm text-gray-400">Dehydrated Onion, Garlic, Ginger, Whole Chillies & Psyllium Husk</span>
               </div>
               <span className="inline-block self-start sm:self-center rounded-full bg-white/10 text-white border border-white/20 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider">
                 Export Scale
@@ -357,7 +357,7 @@ function AboutPage() {
               {[
                 {
                   q: "What does Lokavia export?",
-                  a: "Lokavia exports four primary dehydrated agri-commodities: onion powder, garlic powder, ginger powder, and psyllium husk. We supply these ingredients in bulk to food manufacturers, ingredient distributors, and private-label brands globally."
+                  a: "Lokavia exports five primary dehydrated agri-commodities: onion powder, garlic powder, ginger powder, whole chillies, and psyllium husk. We supply these ingredients in bulk to food manufacturers, ingredient distributors, and private-label brands globally."
                 },
                 {
                   q: "Where is Lokavia based?",

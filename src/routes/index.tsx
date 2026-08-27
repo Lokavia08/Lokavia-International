@@ -10,17 +10,17 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lokavia | Dehydrated Onion, Garlic & Ginger Powder Exporter, India" },
+      { title: "Lokavia | Indian Spices, Whole Chillies & Dehydrated Vegetables Exporter" },
       {
         name: "description",
         content:
-          "Lokavia exports dehydrated onion, garlic, ginger powder, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
+          "Lokavia exports dehydrated onion, garlic, ginger powder, whole chillies, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
       },
-      { property: "og:title", content: "Lokavia | Dehydrated Onion, Garlic & Ginger Powder Exporter, India" },
+      { property: "og:title", content: "Lokavia | Indian Spices, Whole Chillies & Dehydrated Vegetables Exporter" },
       {
         property: "og:description",
         content:
-          "Lokavia exports dehydrated onion, garlic, ginger powder, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
+          "Lokavia exports dehydrated onion, garlic, ginger powder, whole chillies, and psyllium husk from India — bulk supply for food manufacturers, distributors, and private-label brands worldwide.",
       },
       { property: "og:image", content: "https://www.lokaviainternational.com/logo-light.png" },
       { property: "og:url", content: "https://www.lokaviainternational.com/" },
@@ -52,31 +52,32 @@ function Index() {
   const variants = [
     {
       word: "buyers",
-      text: "We work with food manufacturers, ingredient distributors, and private-label brands who need consistent grades, predictable lead times, and clean paperwork. Today the catalogue is focused on four flagship commodities — the roadmap adds pulses, oilseeds, and dehydrated fruit as buyer demand qualifies each category."
+      text: "We work with food manufacturers, ingredient distributors, and private-label brands who need consistent grades, predictable lead times, and clean paperwork. Today the catalogue is focused on flagship commodities — the roadmap adds pulses, oilseeds, and dehydrated fruit as buyer demand qualifies each category."
     },
     {
       word: "manufacturers",
-      text: "We supply consistent-grade dehydrated commodities built for production-line reliability — matched moisture content, mesh size, and batch-to-batch consistency your formulation depends on. Today the catalogue covers four flagship commodities, with more added as your production needs grow."
+      text: "We supply consistent-grade dehydrated commodities built for production-line reliability — matched moisture content, mesh size, and batch-to-batch consistency your formulation depends on. Today the catalogue covers flagship commodities, with more added as your production needs grow."
     },
     {
       word: "traders",
-      text: "We supply bulk agri-commodities with the reliability serious trading requires — consistent availability, competitive FOB pricing, and documentation that moves with the shipment, not behind it. Today's catalogue covers four flagship commodities, expanding as demand across your markets grows."
+      text: "We supply bulk agri-commodities with the reliability serious trading requires — consistent availability, competitive FOB pricing, and documentation that moves with the shipment, not behind it. Today's catalogue covers flagship commodities, expanding as demand across your markets grows."
     },
     {
       word: "suppliers",
-      text: "We work with suppliers who need a dependable upstream partner — traceable sourcing, verified quality, and paperwork that holds up when it reaches your own customers. Today the catalogue covers four flagship commodities, with more added as your sourcing needs expand."
+      text: "We work with suppliers who need a dependable upstream partner — traceable sourcing, verified quality, and paperwork that holds up when it reaches your own customers. Today the catalogue covers flagship commodities, with more added as your sourcing needs expand."
     },
     {
       word: "distributors",
-      text: "We supply distributors who need predictable inventory and consistent specs across every reorder — no surprises in grade, packaging, or lead time. Today the catalogue covers four flagship commodities, growing as your distribution network does."
+      text: "We supply distributors who need predictable inventory and consistent specs across every reorder — no surprises in grade, packaging, or lead time. Today the catalogue covers flagship commodities, growing as your distribution network does."
     }
   ];
 
   const endUses = [
     "For seasoning blends, snacks, and RTE food manufacturing",
+    "Food-grade and nutraceutical-grade dietary fiber",
     "For flavor systems, spice blends, and QSR applications",
     "For spice blends and functional food formulation",
-    "Food-grade and nutraceutical-grade dietary fiber"
+    "For spice extraction, hot sauces, blends, and food service"
   ];
 
   useEffect(() => {
@@ -144,7 +145,7 @@ function Index() {
         const currentStickyScroll = -rect.top;
         const rawProgress = currentStickyScroll / totalStickyScroll;
         const progress = Math.max(0, Math.min(1, rawProgress));
-        const index = Math.min(3, Math.floor(progress * 4));
+        const index = Math.min(products.length - 1, Math.floor(progress * products.length));
 
         if (index !== currentProductIndexRef.current) {
           setCurrentProductIndex(index);
@@ -164,11 +165,11 @@ function Index() {
           }, 200);
         }
       } else if (rect.bottom < visibleHeight) {
-        if (currentProductIndexRef.current !== 3) {
-          setCurrentProductIndex(3);
+        if (currentProductIndexRef.current !== products.length - 1) {
+          setCurrentProductIndex(products.length - 1);
           setIsProductTransitioning(true);
           setTimeout(() => {
-            setDisplayProductIndex(3);
+            setDisplayProductIndex(products.length - 1);
             setIsProductTransitioning(false);
           }, 200);
         }
@@ -208,7 +209,7 @@ function Index() {
             <span className="accent-word">Export-Ready.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Onion powder, garlic powder, ginger powder, and psyllium husk — sourced from India, shipped to 20+ countries with full documentation and third-party testing.
+            Onion powder, garlic powder, ginger powder, whole chillies, and psyllium husk — sourced from India, shipped to 20+ countries with full documentation and third-party testing.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link

@@ -20,6 +20,7 @@
 | Dehydrated onion export | Onion powder, onion flakes/granules future pages, onion powder specs guide |
 | Dehydrated garlic export | Garlic powder, allicin/mesh/moisture guide, garlic powder applications |
 | Ginger powder export | Ginger origin, volatile oil, beverage/bakery/nutraceutical applications |
+| Whole chillies export | Whole chillies, Teja/Sannam/Byadgi, SHU heat/ASTA color, stem/stemless guide |
 | Psyllium export | Food-grade psyllium, nutraceutical psyllium, purity/swell volume guide |
 | Quality/compliance | MRL testing, COA, phytosanitary certificate, export documentation |
 | Buyer education | MOQ, Incoterms, private label, samples, packaging, shelf life |

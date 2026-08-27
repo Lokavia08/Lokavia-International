@@ -95,6 +95,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/products/$slug" params={{ slug: "whole-chillies" }} className="text-gray-300 hover:text-white transition-colors">
+                  Whole Chillies
+                </Link>
+              </li>
+              <li>
                 <Link to="/products/$slug" params={{ slug: "psyllium-husk" }} className="text-gray-300 hover:text-white transition-colors">
                   Psyllium Husk
                 </Link>

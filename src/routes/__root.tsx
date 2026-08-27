@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Lokavia supplies international buyers with premium dehydrated agri-commodities — onion powder, garlic powder, ginger powder, and psyllium husk — at export scale.",
+          "Lokavia supplies international buyers with premium dehydrated agri-commodities — onion powder, garlic powder, ginger powder, whole chillies, and psyllium husk — at export scale.",
       },
       { name: "author", content: "Lokavia" },
       { property: "og:title", content: "Lokavia — Agri-Commodity Exports" },

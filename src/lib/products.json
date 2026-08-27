@@ -730,6 +730,149 @@
           "answer": "Yes, we can supply dried ginger whole, dried ginger sliced, and dried ginger powder depending on your manufacturing requirements."
         }
       ]
+    },
+    {
+      "applications": [
+        "Spice extraction & oleoresin",
+        "Hot sauces & chili pastes",
+        "Curry powders & spice blends",
+        "Meat seasoning & food service"
+      ],
+      "packaging": [
+        "10 kg / 25 kg Jute & PP bags",
+        "25 kg corrugated carton with food-grade PE liner",
+        "Custom compressed bale packing (25 kg / 50 kg)"
+      ],
+      "form": "Whole dried pods (With stem / Stemless)",
+      "origin": "Andhra Pradesh & Telangana, India",
+      "moqKg": 2000,
+      "name": "Whole Chillies",
+      "slug": "whole-chillies",
+      "tagline": "Vibrant ASTA color, intense heat, stem & stemless export grades.",
+      "meshOptions": [
+        "Whole Pods (With Stem)",
+        "Whole Pods (Stemless)",
+        "Crushed Flakes (Custom)"
+      ],
+      "specs": [
+        {
+          "label": "Moisture",
+          "value": "≤ 10.0%"
+        },
+        {
+          "label": "Color Value",
+          "value": "60 – 140 ASTA"
+        },
+        {
+          "label": "Pungency (Heat)",
+          "value": "20,000 – 90,000+ SHU"
+        },
+        {
+          "label": "Total Ash",
+          "value": "≤ 7.0%"
+        }
+      ],
+      "shelfLifeMonths": "18-24",
+      "certifications": [
+        "FSSAI",
+        "APEDA",
+        "Spices Board India",
+        "Kosher",
+        "Halal"
+      ],
+      "introduction": "Lokavia's whole dried red chillies are sourced directly from the renowned Guntur and Warangal chili belts in South India. Processed under sun-drying and controlled hot-air dehumidification, our chillies offer superior capsaicin heat, natural deep-red ASTA color value, and compliance with global aflatoxin, pesticide MRL, and Sudan dye-free food safety requirements.",
+      "image": "/product-whole-chillies.jpg",
+      "description": "Guntur and Warangal origin whole dried red chillies (Teja S17, S4 Sannam, Byadgi), cleaned, stemless or with stem, graded for ASTA color, capsaicin heat, and low moisture.",
+      "metaTitle": "Whole Red Chillies Exporter India | Bulk Guntur & Sannam Chillies — Lokavia",
+      "metaDescription": "Export-grade Indian whole dried red chillies (Teja S17, Sannam S4, Byadgi) with stem or stemless. High ASTA color, calibrated SHU pungency, aflatoxin tested. MOQ 2,000 kg.",
+      "category": "Dried Spices",
+      "originHighlights": [
+        {
+          "title": "Guntur & Warangal Chili Belts",
+          "text": "Sourced directly from Andhra Pradesh and Telangana, the world's most productive red chili growing hubs celebrated for high capsaicin content and rich red oleoresin."
+        },
+        {
+          "title": "Peak Winter & Spring Harvest",
+          "text": "Harvested between January and April when dry sunny weather delivers optimum pod elongation, thick pericarp, and concentrated natural capsaicinoids."
+        },
+        {
+          "title": "Clean Sorting & De-stemming",
+          "text": "Pods undergo mechanical destoning, optical grading, and manual de-stemming to eliminate extraneous matter, loose seeds, and discolored pods."
+        }
+      ],
+      "physicochemicalSpecs": [
+        { "label": "Moisture Content", "value": "≤ 10.0%" },
+        { "label": "Color Value (ASTA)", "value": "60 – 140 ASTA (Grade Dependent)" },
+        { "label": "Capsaicin Content / Heat", "value": "20,000 – 90,000+ SHU" },
+        { "label": "Total Ash", "value": "≤ 7.0%" },
+        { "label": "Acid Insoluble Ash", "value": "≤ 1.0%" },
+        { "label": "Foreign Matter / Loose Seeds", "value": "≤ 1.0%" },
+        { "label": "Damaged / Discolored Pods", "value": "≤ 2.0%" }
+      ],
+      "microbiologicalSpecs": [
+        { "label": "Total Plate Count (TPC)", "value": "≤ 100,000 CFU/g (≤ 10,000 CFU/g steam treated)" },
+        { "label": "Yeast & Mold", "value": "≤ 1,000 CFU/g" },
+        { "label": "E. Coli", "value": "Absent in 1g" },
+        { "label": "Salmonella", "value": "Absent in 25g" },
+        { "label": "Aflatoxin (B1 + B2 + G1 + G2)", "value": "≤ 10 ppb (EU Compliant)" },
+        { "label": "Ochratoxin A", "value": "≤ 15 ppb" }
+      ],
+      "storageHighlights": [
+        {
+          "title": "Storage Temp",
+          "value": "≤ 15°C – 18°C",
+          "desc": "Cold warehouse storage protects natural ASTA color from darkening and prevents volatile oil loss."
+        },
+        {
+          "title": "Relative Humidity",
+          "value": "≤ 60% RH",
+          "desc": "Controlled ambient humidity prevents mold formation, aflatoxin generation, and brittleness."
+        },
+        {
+          "title": "Ventilated Stacking",
+          "value": "Palletized Dunnage",
+          "desc": "Bags and cartons are elevated on wooden pallets away from perimeter walls for maximum air circulation."
+        }
+      ],
+      "complianceHighlights": [
+        {
+          "title": "Sudan Dye & Aflatoxin Certified",
+          "text": "100% certified free of artificial color adulterants (Sudan I–IV) and tested for aflatoxin limits under ASTA/EU standards."
+        },
+        {
+          "title": "Spices Board India Pre-Shipment",
+          "text": "Inspected and cleared with mandatory Spices Board Quality Certificate and export sampling."
+        },
+        {
+          "title": "Customs HS Code",
+          "text": "Declared under HS Code 09042110 (Whole with stem) or 09042120 (Stemless) for rapid clearance."
+        }
+      ],
+      "documentList": [
+        "Certificate of Analysis (CoA) per batch",
+        "Spices Board India Certificate of Inspection",
+        "Phytosanitary Certificate from NPPO India",
+        "Aflatoxin & Sudan Dye Free Test Report",
+        "Fumigation / Treatment Certificate",
+        "Non-GMO Declaration",
+        "Bill of Lading, Packing List & Commercial Invoice",
+        "Certificate of Origin"
+      ],
+      "faqs": [
+        {
+          "question": "Which varieties of Indian whole chillies do you export?",
+          "answer": "We export key commercial varieties including Teja (S17) for high heat (60,000–90,000+ SHU), Sannam (S4 / 334) for medium heat (25,000–40,000 SHU) and versatile culinary use, and Byadgi chillies for vibrant deep red color (100–140 ASTA) with mild pungency."
+        },
+        {
+          "question": "Do you supply both stemless (cut stem) and with-stem chillies?",
+          "answer": "Yes, we supply whole chillies with stem, hand-stemmed (cut stem), or fully machine-cleaned stemless, according to the processing line and extraction requirements of the buyer."
+        },
+        {
+          "question": "How do you control aflatoxin and pesticide residues in chilli shipments?",
+          "answer": "We implement strict post-harvest drying controls on elevated tarpaulins, followed by pre-export batch testing at ISO/IEC 17025 accredited laboratories to ensure total aflatoxins remain under 10 ppb (B1 ≤ 5 ppb) to comply with EU MRL standards."
+        }
+      ]
     }
   ]
 }
+
