@@ -22,14 +22,28 @@ export const Route = createFileRoute("/insights/$slug")({
     const { post } = loaderData;
 
     // Extract FAQs for FAQPage Schema
-    const faqRegex = /\*\*Q:\s*(.*?)\*\*\s*\n+([^#\n*]+)/g;
     const faqs: { question: string; answer: string }[] = [];
-    let match;
-    while ((match = faqRegex.exec(post.body)) !== null) {
+    const faqSectionMatch = post.body.match(/## (?:Frequently Asked Questions|FAQ)[\s\S]*$/i);
+    const faqBody = faqSectionMatch ? faqSectionMatch[0] : post.body;
+
+    const h3FaqRegex = /###\s+(?:Q:\s*)?(.*?)\n+([^#\n*]+)/gi;
+    let h3Match;
+    while ((h3Match = h3FaqRegex.exec(faqBody)) !== null) {
       faqs.push({
-        question: match[1].trim(),
-        answer: match[2].trim().replace(/\n/g, " "),
+        question: h3Match[1].replace(/[*_]/g, "").trim(),
+        answer: h3Match[2].replace(/[*_]/g, "").trim().replace(/\n/g, " "),
       });
+    }
+
+    if (faqs.length === 0) {
+      const boldFaqRegex = /\*\*Q:\s*(.*?)\*\*\s*\n+([^#\n*]+)/gi;
+      let boldMatch;
+      while ((boldMatch = boldFaqRegex.exec(post.body)) !== null) {
+        faqs.push({
+          question: boldMatch[1].trim(),
+          answer: boldMatch[2].trim().replace(/\n/g, " "),
+        });
+      }
     }
 
     const articleSchema = {
@@ -150,10 +164,10 @@ function PostPage() {
                 })}
               </span>
               <h1 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-ink sm:leading-tight">
-                <TextHighlight>{post.title}</TextHighlight>
+                {post.title}
               </h1>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-ink-soft italic">
-                <TextHighlight>{post.excerpt}</TextHighlight>
+                {post.excerpt}
               </p>
             </header>
 

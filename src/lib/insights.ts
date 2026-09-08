@@ -201,6 +201,73 @@ export function mdToHtml(md: string): string {
 
   html = processedLines.join("\n");
 
+  // Parse FAQ Sections into Pop-out Containers
+  // Look for sections starting with ## Frequently Asked Questions or ## FAQ
+  const sectionParts = html.split(/(?=^##\s+(?:Frequently Asked Questions|FAQ))/im);
+  if (sectionParts.length > 1) {
+    const mainContent = sectionParts[0];
+    const faqAndAfter = sectionParts.slice(1).join("");
+    
+    // Check if there are further ## sections after FAQ
+    const subsequentSections = faqAndAfter.split(/(?=^##\s+(?!Frequently Asked Questions|FAQ))/im);
+    const faqSectionRaw = subsequentSections[0];
+    const afterFaqRaw = subsequentSections.slice(1).join("");
+
+    // Process FAQ section raw items
+    // FAQ items can be "### Question" or "**Q: Question**"
+    const faqLines = faqSectionRaw.split("\n");
+    const faqItems: { q: string; a: string[] }[] = [];
+    let currentQ: string | null = null;
+    let currentA: string[] = [];
+
+    for (let i = 0; i < faqLines.length; i++) {
+      const line = faqLines[i];
+      const trimmed = line.trim();
+
+      // Skip the FAQ header line itself
+      if (/^##\s+(?:Frequently Asked Questions|FAQ)/i.test(trimmed)) {
+        continue;
+      }
+
+      const h3Match = trimmed.match(/^###\s+(?:Q:\s*)?(.*$)/i);
+      const boldQMatch = trimmed.match(/^\*\*Q:\s*(.*?)\*\*/i);
+
+      if (h3Match || boldQMatch) {
+        if (currentQ) {
+          faqItems.push({ q: currentQ, a: currentA });
+          currentA = [];
+        }
+        currentQ = h3Match ? h3Match[1].replace(/[*_#]/g, "").trim() : boldQMatch![1].replace(/[*_#]/g, "").trim();
+      } else if (currentQ) {
+        if (trimmed.startsWith("A:") || trimmed.startsWith("**A:**")) {
+          const ansText = trimmed.replace(/^(\*\*A:\*\*|A:)\s*/i, "");
+          if (ansText) currentA.push(ansText);
+        } else if (trimmed !== "") {
+          currentA.push(trimmed);
+        }
+      }
+    }
+    if (currentQ) {
+      faqItems.push({ q: currentQ, a: currentA });
+    }
+
+    let faqHtml = "";
+    if (faqItems.length > 0) {
+      const renderedCards = faqItems
+        .map((item) => {
+          const ansHtml = item.a.join("<br /><br />");
+          return `<div class="rounded-xl border border-hairline bg-white p-5 sm:p-6 shadow-xs transition-all hover:border-[var(--orange)]/40"><h4 class="text-base font-bold text-ink flex items-start gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-md bg-[var(--orange)]/10 text-[var(--orange)] text-xs font-bold flex items-center justify-center mt-0.5">Q</span><span>${item.q}</span></h4><div class="mt-3 pl-9 text-sm leading-relaxed text-ink-soft">${ansHtml}</div></div>`;
+        })
+        .join("\n");
+
+      faqHtml = `<div class="my-12 rounded-2xl border border-hairline/80 bg-[oklch(0.985_0.003_260)] p-6 sm:p-8 shadow-xs"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--orange)]/10 text-[var(--orange)] text-xs font-bold uppercase tracking-wider mb-2">FAQ</div><h3 class="text-xl font-bold text-ink mb-6">Frequently Asked Questions</h3><div class="space-y-4">${renderedCards}</div></div>`;
+    } else {
+      faqHtml = faqSectionRaw;
+    }
+
+    html = mainContent + "\n" + faqHtml + "\n" + afterFaqRaw;
+  }
+
   // Paragraph blocks
   const blocks = html.split(/\n{2,}/);
   const parsedBlocks = blocks.map((block) => {
@@ -212,21 +279,7 @@ export function mdToHtml(md: string): string {
     return `<p class="my-4 text-base leading-relaxed text-ink-soft">${trimmed.replace(/\n/g, "<br />")}</p>`;
   });
 
-  const fullHtml = parsedBlocks.filter((b) => b !== "").join("\n");
-
-  const HIGHLIGHT_WORDS = ["we", "us", "you", "our", "your", "buyers", "suppliers", "lokavia", "manufacturers", "distributors"];
-  const highlightRegex = new RegExp(`(<[^>]+>)|(\\b(?:${HIGHLIGHT_WORDS.join("|")})\\b[.,!?;]?)`, "gi");
-
-  return fullHtml.replace(highlightRegex, (match, tag, word) => {
-    if (tag) return tag;
-    if (word) {
-      const cleanWord = word.replace(/[.,!?;]+$/, "");
-      if (HIGHLIGHT_WORDS.includes(cleanWord.toLowerCase())) {
-        return `<span class="accent-word">${word}</span>`;
-      }
-    }
-    return match;
-  });
+  return parsedBlocks.filter((b) => b !== "").join("\n");
 }
 
 import { supabase } from "./supabase";
